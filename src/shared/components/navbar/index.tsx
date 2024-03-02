@@ -21,6 +21,11 @@ export const Navbar = () => {
 
   const handleCopyToClipboard = () => {
     navigator.clipboard.writeText(STYLES);
+    handleSaveLocal();
+  };
+
+  const handleSaveLocal = () => {
+    localStorage.setItem('chatbox-name-styles', 'modificacion');
   };
 
   return (
@@ -75,6 +80,7 @@ export const Navbar = () => {
                   language='css'
                   theme={dracula}
                   wrapLongLines
+                  onCopy={handleSaveLocal}
                 />
               </ModalBody>
               <ModalFooter>
@@ -89,7 +95,7 @@ export const Navbar = () => {
                       onClick={handleCopyToClipboard}
                       startContent={<MdContentCopy />}
                     >
-                      Copy
+                      Copy and Save
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className='bg-green-600 text-gray-200'>
