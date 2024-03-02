@@ -3,9 +3,11 @@ import { Layaout } from './shared/layout';
 
 const App = () => {
   return (
-    <Layaout>
-      <HomePage />
-    </Layaout>
+    <main className='dark dark-bg text-foreground min-h-screen '>
+      <Layaout>
+        <HomePage />
+      </Layaout>
+    </main>
   );
 };
 

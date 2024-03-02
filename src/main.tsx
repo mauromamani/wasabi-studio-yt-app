@@ -5,14 +5,15 @@ import './shared/styles/index.css';
 import { NextUIProvider } from '@nextui-org/react';
 import { Provider } from 'react-redux';
 import { store } from './core/store/index.ts';
+import { ThemeProvider } from './shared/context/themes/index.theme.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <NextUIProvider>
       <Provider store={store}>
-        <main className='dark dark-bg text-foreground min-h-screen '>
+        <ThemeProvider>
           <App />
-        </main>
+        </ThemeProvider>
       </Provider>
     </NextUIProvider>
   </React.StrictMode>
