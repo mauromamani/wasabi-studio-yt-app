@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  background-color: #2b2b2b;
+}
+
+.dark-bg {
+  background-color: #242424;
+}
+
+.border-dark {
+  border-color: hsl(
+    var(--nextui-divider) / var(--nextui-divider-opacity, var(--tw-bg-opacity))
+  );
+}
+
+.bg-preview {
+  background-color: #1e1e1e;
+  opacity: 0.8;
+  background-image: radial-gradient(#4a4a4a 1.35px, #1e1e1e 1.35px);
+  background-size: 27px 27px;
+}
+
+.bg-chat-preview {
+  background-color: #292929;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #363636 25%,
+      transparent 25%,
+      transparent 75%,
+      #363636 75%,
+      #363636
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #363636 25%,
+      #292929 25%,
+      #292929 75%,
+      #363636 75%,
+      #363636
+    );
+  background-position: 0 0, 17px 17px;
+  background-size: 34px 34px;
+}
