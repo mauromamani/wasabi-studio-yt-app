@@ -20,7 +20,7 @@ const items: Items[] = [
 ];
 
 const ButtonIcon = ({ children }: { children: React.ReactNode }) => (
-  <Button isIconOnly className='bg-transparent mr-1' radius='full'>
+  <Button isIconOnly className='mr-1 bg-transparent ' radius='full'>
     {children}
   </Button>
 );
