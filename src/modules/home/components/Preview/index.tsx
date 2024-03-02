@@ -1,9 +1,9 @@
 /* eslint-disable no-irregular-whitespace */
+import { useContext } from 'react';
 import { Button, ScrollShadow } from '@nextui-org/react';
 import { LightModeIcon } from '../../../../shared/components/icons/LightModeIcon';
 import { useAppSelector } from '../../../../core/store/hooks';
 import { MESSAGE_RENDERER, YT_CONTAINER } from '../../html/customStyles';
-import { useContext } from 'react';
 import { ThemeContext } from '../../../../shared/context/themes/index.theme';
 import { DarkModeIcon } from '../../../../shared/components/icons/DarkModeIcon';
 
