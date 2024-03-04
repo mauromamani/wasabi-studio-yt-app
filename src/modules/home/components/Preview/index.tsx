@@ -24,10 +24,12 @@ export const Preview = () => {
     <ScrollShadow className='w-full h-[calc(100vh-80px)]'>
       <article
         id='preview'
-        className='flex-1 bg-preview py-8 px-20 min-h-[calc(100vh-81px)]'
+        className={`${
+          theme === 'dark' ? 'bg-preview' : 'bg-preview-light'
+        } flex-1  py-8 px-20 min-h-[calc(100vh-81px)]`}
       >
         <div className='flex justify-between items-center'>
-          <h2 className='text-xl font-bold'>Chat Preview {theme}</h2>
+          <h2 className='text-xl font-bold'>Chat Preview</h2>
           <Button
             isIconOnly
             className='bg-transparent'
@@ -39,7 +41,9 @@ export const Preview = () => {
         </div>
 
         <div
-          className='bg-chat-preview p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none'
+          className={`${
+            theme === 'dark' ? 'bg-chat-preview' : 'bg-chat-preview-light'
+          } p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none`}
           style={{ userSelect: 'none' }}
           dangerouslySetInnerHTML={{
             __html: YT_CONTAINER(customStyles()),

@@ -6,8 +6,16 @@
   background-color: #2b2b2b;
 }
 
+.sidebar-light {
+  background-color: #f0f2f1;
+}
+
 .dark-bg {
   background-color: #242424;
+}
+
+.light-bg {
+  background-color: #fefefe;
 }
 
 .border-dark {
@@ -23,8 +31,13 @@
   background-size: 27px 27px;
 }
 
+.bg-preview-light {
+  opacity: 0.8;
+  background-image: radial-gradient(#afabab 1.35px, #ededed 1.35px);
+  background-size: 27px 27px;
+}
+
 .bg-chat-preview {
-  background-color: #292929;
   background-image: repeating-linear-gradient(
       45deg,
       #363636 25%,
@@ -40,6 +53,29 @@
       #292929 75%,
       #363636 75%,
       #363636
+    );
+  background-position: 0 0, 17px 17px;
+  background-size: 34px 34px;
+}
+
+.bg-chat-preview-light {
+  background-color: #eeeeee;
+  opacity: 0.8;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #e1e1e1 25%,
+      transparent 25%,
+      transparent 75%,
+      #e1e1e1 75%,
+      #e1e1e1
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #e1e1e1 25%,
+      #eeeeee 25%,
+      #eeeeee 75%,
+      #e1e1e1 75%,
+      #e1e1e1
     );
   background-position: 0 0, 17px 17px;
   background-size: 34px 34px;

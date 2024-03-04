@@ -2,7 +2,8 @@ import Confetti from 'react-confetti';
 import { Button, Image, Link, Tooltip } from '@nextui-org/react';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { SiKofi } from 'react-icons/si';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../../context/themes/index.theme';
 
 const links = [
   {
@@ -29,6 +30,7 @@ const links = [
 ];
 
 export const Sidebar = () => {
+  const { theme } = useContext(ThemeContext);
   const [showConfetti, setShowConfetti] = useState(false);
   const handleShowConfetti = () => {
     setShowConfetti((prev) => !prev);
@@ -36,7 +38,11 @@ export const Sidebar = () => {
 
   return (
     <>
-      <div className='sidebar w-20 flex flex-col px-5 py-7 justify-between'>
+      <div
+        className={`${
+          theme === 'dark' ? 'sidebar' : 'sidebar-light'
+        } w-20 flex flex-col px-5 py-7 justify-between`}
+      >
         <Image
           width={300}
           radius='sm'

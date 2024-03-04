@@ -9,14 +9,15 @@ import {
 } from '../../../../shared/components/icons/YtTestingIcons';
 
 interface Items {
-  key: number;
   title: string;
   content: React.ReactNode;
 }
 
 const items: Items[] = [
-  { key: 1, title: 'Colors', content: <TypographyEditor /> },
-  { key: 2, title: 'Typography', content: <TypographyEditor /> },
+  { title: 'Chat Layout', content: <TypographyEditor /> },
+  { title: 'Badge', content: <TypographyEditor /> },
+  { title: 'Chat Design', content: <TypographyEditor /> },
+  { title: 'Support Card Design', content: <TypographyEditor /> },
 ];
 
 const ButtonIcon = ({ children }: { children: React.ReactNode }) => (
@@ -46,9 +47,9 @@ export const Editor = () => {
         {items.map((item) => (
           <AccordionItem
             classNames={{ title: 'text-sm font-semibold' }}
-            key={item.key}
+            key={item.title}
             title={item.title}
-            className='pl-3'
+            className='pl-3 pr-2'
           >
             {item.content}
           </AccordionItem>
