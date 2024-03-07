@@ -16,19 +16,19 @@ export const ChatIcon = () => (
       d='M7.67065 8.06299H23.8447'
       stroke='#A1A1AA'
       strokeWidth='2'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M7.67065 12.063H23.8447'
       stroke='#A1A1AA'
       strokeWidth='2'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M7.67065 16.063H18.3948'
       stroke='#A1A1AA'
       strokeWidth='2'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
   </svg>
 );
@@ -54,13 +54,13 @@ export const SuperChatIcon = () => (
       d='M15.504 4.3584L15.504 5.83683'
       stroke='#A1A1AA'
       strokeWidth='2'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M15.504 17.5085L15.504 18.987'
       stroke='#A1A1AA'
       strokeWidth='2'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M10.2455 10.9783L10.2455 7.84598C10.2456 6.74225 11.1397 5.84718 12.2434 5.846L19.7875 5.83798C20.3402 5.83739 20.7886 6.28528 20.7886 6.83798V7.67128C20.7886 8.22357 20.3409 8.67128 19.7886 8.67128H14.5282C14.0755 8.67128 13.7084 9.03829 13.7084 9.49102C13.7084 9.94376 14.0755 10.3108 14.5282 10.3108H18.7208C19.8253 10.3108 20.7208 11.2062 20.7208 12.3108V15.5085C20.7208 16.6131 19.8253 17.5085 18.7208 17.5085H11.2628C10.7105 17.5085 10.2628 17.0608 10.2628 16.5085V15.6769C10.2628 15.1246 10.7105 14.6769 11.2628 14.6769H16.6655C17.1346 14.6769 17.5148 14.2967 17.5148 13.8276C17.5148 13.3586 17.1346 12.9783 16.6655 12.9783H12.2455C11.1409 12.9783 10.2455 12.0829 10.2455 10.9783Z'
@@ -102,12 +102,12 @@ export const StickerIcon = () => (
     <path
       d='M11.6097 10.004C12.172 8.68925 13.5144 8.72224 14.0043 10.004'
       stroke='#A1A1AA'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M16.4485 10.004C17.0108 8.68925 18.3532 8.72224 18.843 10.004'
       stroke='#A1A1AA'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
   </svg>
 );

@@ -3,12 +3,18 @@ import { useContext } from 'react';
 import { Button, ScrollShadow } from '@nextui-org/react';
 import { LightModeIcon } from '../../../../shared/components/icons/LightModeIcon';
 import { useAppSelector } from '../../../../core/store/hooks';
-import { MESSAGE_RENDERER, YT_CONTAINER } from '../../html/customStyles';
+import {
+  MESSAGE_RENDERER,
+  YT_CONTAINER_EDITOR,
+  YT_CONTAINER_TESTING,
+} from '../../html/customStyles';
 import { ThemeContext } from '../../../../shared/context/themes/index.theme';
 import { DarkModeIcon } from '../../../../shared/components/icons/DarkModeIcon';
+import ReactHtmlParser from 'react-html-parser';
 
 export const Preview = () => {
-  const { messageRenderConfig } = useAppSelector((state) => state.editor);
+  const { messageRenderConfig, editorContent, testingMode, testingContent } =
+    useAppSelector((state) => state.editor);
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   const handleChangeMode = () => {
@@ -40,15 +46,28 @@ export const Preview = () => {
           </Button>
         </div>
 
-        <div
-          className={`${
-            theme === 'dark' ? 'bg-chat-preview' : 'bg-chat-preview-light'
-          } p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none`}
-          style={{ userSelect: 'none' }}
-          dangerouslySetInnerHTML={{
-            __html: YT_CONTAINER(customStyles()),
-          }}
-        />
+        {testingMode ? (
+          <div
+            className={`${
+              theme === 'dark' ? 'bg-chat-preview' : 'bg-chat-preview-light'
+            } p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none h-[calc(75vh)]`}
+            style={{ userSelect: 'none' }}
+          >
+            {ReactHtmlParser(
+              YT_CONTAINER_TESTING(customStyles(), testingContent)
+            )}
+          </div>
+        ) : (
+          <div
+            className={`${
+              theme === 'dark' ? 'bg-chat-preview' : 'bg-chat-preview-light'
+            } p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none`}
+            style={{ userSelect: 'none' }}
+            dangerouslySetInnerHTML={{
+              __html: YT_CONTAINER_EDITOR(customStyles(), editorContent),
+            }}
+          />
+        )}
       </article>
     </ScrollShadow>
   );
