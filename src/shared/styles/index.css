@@ -25,14 +25,11 @@
 }
 
 .bg-preview {
-  background-color: #1e1e1e;
-  opacity: 0.8;
   background-image: radial-gradient(#4a4a4a 1.35px, #1e1e1e 1.35px);
   background-size: 27px 27px;
 }
 
 .bg-preview-light {
-  opacity: 0.8;
   background-image: radial-gradient(#afabab 1.35px, #ededed 1.35px);
   background-size: 27px 27px;
 }
@@ -60,7 +57,6 @@
 
 .bg-chat-preview-light {
   background-color: #eeeeee;
-  opacity: 0.8;
   background-image: repeating-linear-gradient(
       45deg,
       #e1e1e1 25%,

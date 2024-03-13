@@ -7,13 +7,15 @@ import { store } from './core/store/index.ts';
 import { ThemeProvider } from './shared/context/themes/index.theme.tsx';
 
 import './shared/styles/index.css';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './shared/router/index.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <NextUIProvider>
       <Provider store={store}>
         <ThemeProvider>
-          <App />
+          <RouterProvider router={router} />
         </ThemeProvider>
       </Provider>
     </NextUIProvider>

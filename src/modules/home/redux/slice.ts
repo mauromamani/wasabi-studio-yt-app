@@ -17,9 +17,9 @@ interface EditorState {
 
 const initialState: EditorState = {
   messageRenderConfig: {
-    messageRendererFontSize: 16,
-    messageRendererFontWeight: 800,
-    authorNameFontSize: 16,
+    messageRendererFontSize: 20,
+    messageRendererFontWeight: 500,
+    authorNameFontSize: 20,
   },
   testingMode: false,
   testingContent: [],

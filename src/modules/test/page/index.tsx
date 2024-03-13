@@ -10,7 +10,7 @@ import {
 } from '../../../shared/components/icons/YtTestingIcons';
 import {
   MESSAGE_RENDERER,
-  YT_CONTAINER_TESTING,
+  YT_CONTAINER_TESTING_ISOLATED,
 } from '../../home/html/customStyles';
 import ReactHtmlParser from 'react-html-parser';
 import { actions } from '../../home/redux/slice';
@@ -86,7 +86,9 @@ export const TestPage = () => {
   return (
     <>
       <div className='bg-transparent' style={{ background: 'transparent' }}>
-        {ReactHtmlParser(YT_CONTAINER_TESTING(customStyles(), testingContent))}
+        {ReactHtmlParser(
+          YT_CONTAINER_TESTING_ISOLATED(customStyles(), testingContent)
+        )}
 
         <div className='p-5 py-7 flex justify-center items-end bg-red-200'>
           {buttons.map((button) => (
