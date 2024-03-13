@@ -62,25 +62,14 @@ const buttons = [
 ];
 
 export const TestPage = () => {
-  const { testingContent, messageRenderConfig } = useAppSelector(
+  const { testingContent, stylesConfig } = useAppSelector(
     (state) => state.editor
   );
 
   const customStyles = () => {
-    const messageRender = MESSAGE_RENDERER(messageRenderConfig);
+    const messageRender = MESSAGE_RENDERER(stylesConfig);
 
-    const body = `
-      body {
-        background: transparent;
-      }
-    `;
-
-    const customStyles = `
-      ${messageRender}
-      ${body}
-    `;
-
-    return customStyles;
+    return messageRender;
   };
 
   return (

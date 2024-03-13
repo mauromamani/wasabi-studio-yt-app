@@ -51,6 +51,14 @@ export const Navbar = () => {
           <Button
             variant='bordered'
             className='text-gray-300 font-semibold border-dark'
+            onClick={handleResetStyles}
+          >
+            Testing
+          </Button>
+
+          <Button
+            variant='bordered'
+            className='text-gray-300 font-semibold border-dark'
             startContent={<ReloadIcon />}
             onClick={handleResetStyles}
           >

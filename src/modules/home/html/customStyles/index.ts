@@ -1,7 +1,7 @@
-import { MessageRendererConfig } from '../../interfaces';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { StylesConfig } from '../../interfaces';
 import { STYLES } from '../styles';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const YT_CONTAINER_TESTING_ISOLATED = (
   customStyles: string,
   content: any[]
@@ -76,80 +76,6 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
       </div>
 `;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const YT_CONTAINER_TESTING = (customStyles: string, content: any[]) => `
-      <style>
-        ${STYLES}
-    
-        html {
-          background: transparent;
-        }
-
-        yt-live-chat-text-message-renderer yt-live-chat-author-chip {
-          top: 10px !important;
-        }
-
-        yt-live-chat-text-message-renderer #author-photo {
-          margin-top: 30px !important;
-        }
-
-        .container {
-          background-color: transparent;
-          width: 100%;
-          position: relative;
-          overflow: hidden;
-          scroll-width: none;
-        }
-
-        .fixed-container {
-          overflow: hidden;
-          height: 100%;
-          width: 100%;
-          display: flex;
-          flex-direction: column-reverse;
-          align-items: center;
-          bottom: 0;
-        }
-
-        ${customStyles}
-      </style>
-
-      <div class="container">
-        <div class="fixed-container">
-          <yt-live-chat-app>
-            <div id="contents" class="style-scope yt-live-chat-app">
-                <yt-live-chat-renderer class="style-scope yt-live-chat-app" hide-timestamps="" darker-dark-theme="" has-ticker="" has-input-action-panel="">
-                    <iron-pages id="content-pages" class="style-scope yt-live-chat-renderer">
-                        <div id="chat-messages" class="style-scope yt-live-chat-renderer iron-selected">
-                            <div id="contents" class="style-scope yt-live-chat-renderer">
-                                <div id="chat" class="style-scope yt-live-chat-renderer">
-                                    <div id="item-list" class="style-scope yt-live-chat-renderer">
-                                        <yt-live-chat-item-list-renderer class="style-scope yt-live-chat-renderer" allow-scroll="" id="live-chat-item-list-panel">
-                                            <div id="contents" class="style-scope yt-live-chat-item-list-renderer">
-                                                <div id="item-scroller" class="style-scope yt-live-chat-item-list-renderer animated">
-                                                    <div id="item-offset" class="style-scope yt-live-chat-item-list-renderer">
-                                                        <div id="items" class="style-scope yt-live-chat-item-list-renderer widget-wrapper" style="transform: translateY(0px); height: 100%;">
-                                                          ${content
-                                                            .map((c) => c())
-                                                            .join('')}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </yt-live-chat-item-list-renderer>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </iron-pages>
-                </yt-live-chat-renderer>
-            </div>
-          </yt-live-chat-app>
-        </div>
-      </div>
-`;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
       <style>
         ${STYLES}
@@ -162,12 +88,9 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
           overflow: hidden;
         }
 
-        yt-live-chat-text-message-renderer {
-          animation: none !important;
-          width: 100% !important;
-        }
-
-        yt-live-chat-membership-item-renderer {
+        yt-live-chat-text-message-renderer,
+        yt-live-chat-membership-item-renderer,
+        ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
           animation: none !important;
         }
 
@@ -207,11 +130,115 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
         </div>
 `;
 
-export const MESSAGE_RENDERER = (config: MessageRendererConfig) => `
+export const ROOT_STYLES = (config: StylesConfig) => `
+  :root {
+    --font-family: 'Ibarra Real Nova', serif;
+
+    /* all */
+    --all-background-message-color: linear-gradient(
+      98deg,
+      rgba(18, 18, 18, 1) 12%,
+      rgba(33, 31, 30, 1) 61%
+    );
+    --all-background-color: #121212;
+    --all-message-color: #ffffff;
+    --all-border-name-color: #dbb092;
+    --all-name-color: #dbb092;
+    --all-badge-color: #ea5272;
+
+    /* membership */
+    --membership-name-color: #dbb092;
+    --membership-subtext-color: #ea5272;
+    --membership-other-text-color: #ea5272;
+    --membership-message-color: #ffffff;
+    --membership-background-color: #121212;
+    --membership-border-color: #dbb092;
+    --membership-background-message-color: #121212;
+    --membership-border-message-color: #dbb092;
+    /* end-membership */
+
+    /* sc */
+    --sc-name-color: #ffffff;
+    --sc-amount-color: #ffffff;
+    --sc-message-color: #e36868;
+    --sc-background-color: #e36868;
+    --sc-border-color: #ffffff;
+    --sc-background-message-color: #fffffc;
+    --sc-border-message-color: #e36868;
+    --sc-decoration-color: #ffffff;
+    /* end-sc */
+
+    /* chat-font-size */
+    --name-font-size: ${config.chatAuthorFontSize}px;
+    --message-font-size: ${config.chatMessageFontSize}px;
+    /* end-chat-font-size */
+
+    /* profile-toggle */
+    --show-profile-picture: block;
+    /* end-profile-toggle */
+
+    /* sc-font-size */
+    --sc-name-font-size: ${config.supportCardTitleFontSize}px;
+    --sc-amount-font-size: ${config.supportCardMessageFontSize}px;
+    --sc-message-font-size: ${config.supportCardMessageFontSize}px;
+    /* end-sc-font-size */
+
+    /* membership-font-size */
+    --membership-name-font-size: ${config.supportCardTitleFontSize}px;
+    --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
+    --membership-other-text-font-size: ${config.supportCardOtherTextFontSize}px;
+    --membership-message-font-size: ${config.supportCardMessageFontSize}px;
+    /* end-membership-font-size */
+  }
+
+  /*
+  yt-live-chat-text-message-renderer,
+  yt-live-chat-membership-item-renderer,
+  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
+    margin-top: 30px !important;
+  }
+
+  yt-live-chat-text-message-renderer *,
+  yt-live-chat-membership-item-renderer *,
+  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer * {
+    transform: scale(1.09) !important;
+  }*/
+
+
+  /************************** START BADGE DESIGN **************************/
+  yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
+    display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
+    font-size: ${config.badgeFontSize + 3}px !important;
+  }
+
+  yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+    display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
+    font-size: ${config.badgeFontSize}px !important;
+  }
+  /************************** END BADGE DESIGN **************************/
+
+  /************************** START CHAT DESIGN **************************/
+  yt-live-chat-text-message-renderer * {
+    text-transform: ${config.chatAllCaps ? 'uppercase' : 'none'}  !important;
+  }
+  /************************** END CHAT DESIGN **************************/
+
+  /************************** START SUPPORT CARD DESIGN **************************/
+  yt-live-chat-membership-item-renderer *,
+  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer * {
+    text-transform: ${
+      config.supportCardAllCaps ? 'uppercase' : 'none'
+    }  !important;
+  }
+  /************************** END SUPPORT CARD DESIGN **************************/
+
+`;
+
+export const MESSAGE_RENDERER = (config: StylesConfig) => `
   /* Author Name */
   yt-live-chat-text-message-renderer #author-name {
     font-family: 'Nunito' !important;
-    font-size: ${config.authorNameFontSize}px !important;
+    font-size: ${config.chatAuthorFontSize}px !important;
     font-weight: 600 !important;
     letter-spacing: 0.5px !important;
     overflow: hidden !important;
@@ -227,8 +254,8 @@ export const MESSAGE_RENDERER = (config: MessageRendererConfig) => `
   /* Message Renderer */
   yt-live-chat-text-message-renderer #message, yt-live-chat-text-message-renderer #message * {
     font-family: 'Nunito' !important;
-    font-size: ${config.messageRendererFontSize}px !important;
-    font-weight: ${config.messageRendererFontWeight} !important;
+    font-size: ${config.chatMessageFontSize}px !important;
+    font-weight: 500 !important;
     line-height: 100% !important;
     text-align: start !important;
     word-break: break-all;

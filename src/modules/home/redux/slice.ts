@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice } from '@reduxjs/toolkit';
-import { MessageRendererConfig } from '../interfaces';
+import { StylesConfig } from '../interfaces';
 import { OWNER_CHAT } from '../html/chats/owner';
 import { MOD_CHAT } from '../html/chats/mod';
 import { MEMBER_CHAT } from '../html/chats/member';
@@ -9,17 +9,35 @@ import { MEMHO, MEMPM } from '../html/membership/membership';
 import { GIFT } from '../html/gift/gift';
 
 interface EditorState {
-  messageRenderConfig: MessageRendererConfig;
+  stylesConfig: StylesConfig;
   testingMode: boolean;
   testingContent: any[];
   editorContent: any[];
 }
 
 const initialState: EditorState = {
-  messageRenderConfig: {
-    messageRendererFontSize: 20,
-    messageRendererFontWeight: 500,
-    authorNameFontSize: 20,
+  stylesConfig: {
+    /**
+     * Badge
+     */
+    badgeDisplayBadge: true,
+    badgeFontSize: 10,
+
+    /**
+     * Chat Design
+     */
+    chatAllCaps: false,
+    chatMessageFontSize: 20,
+    chatAuthorFontSize: 20,
+
+    /**
+     * Support Card Design
+     */
+    supportCardAllCaps: false,
+    supportCardTitleFontSize: 20,
+    supportCardSubTitleFontSize: 15,
+    supportCardOtherTextFontSize: 15,
+    supportCardMessageFontSize: 14,
   },
   testingMode: false,
   testingContent: [],
@@ -48,9 +66,11 @@ export const editorSlice = createSlice({
   name: 'editor',
   initialState,
   reducers: {
-    setMessageRenderConfig: (state, { payload }) => {
-      state.messageRenderConfig[payload.key as keyof MessageRendererConfig] =
-        payload.value;
+    setStylesConfig: (state, { payload }) => {
+      const key = payload.key as keyof StylesConfig;
+      const value = payload.value as number | boolean;
+
+      state.stylesConfig[key] = value;
     },
     setTestingMode: (state, { payload }) => {
       state.testingMode = payload;

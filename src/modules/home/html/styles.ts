@@ -296,15 +296,14 @@ export const STYLES = `
     content: 'VIEWER';
   }
 
-  /* Messages. */
-  /* IMPORTANTE Principal Contenedor de los mensajes */
+  /* TYPE MESSAGE */
   yt-live-chat-text-message-renderer {
     /* display: none; */
     position: relative !important;
     overflow: visible !important;
     width: fit-content !important;
     min-width: 25% !important;
-    margin: 7px 20px 7px 20px !important;
+    margin: 10px 20px 10px 20px !important;
     padding: 0 !important;
     contain: none !important;
     animation: slide-in-left 0.5s ease both !important;
@@ -375,7 +374,7 @@ export const STYLES = `
   yt-live-chat-paid-message-renderer {
     /* display: none; */
     text-align: center !important;
-    margin: 15px 20px 15px 20px !important;
+    margin: 5px 20px 5px 20px !important;
     padding: 0 !important;
     /* width: 90% !important; */
     /* display: flex !important; */
@@ -526,7 +525,7 @@ export const STYLES = `
     /* margin-bottom: 20px !important; */
     /* margin-right: auto !important; */
     /* padding: 0 !important; */
-    margin: 15px 20px 15px 20px !important;
+    margin: 5px 20px 5px 20px !important;
     padding: 0 !important;
     /* border: 1px solid red; */
     overflow: visible !important;
@@ -773,7 +772,7 @@ export const STYLES = `
     /* margin-top: 20px !important; */
     /* margin-bottom: 20px !important; */
     /* border: 1px solid red; */
-    margin: 15px 20px 15px 20px !important;
+    margin: 5px 20px 5px 20px !important;
     padding: 0 !important;
     /* border: 1px solid red; */
     overflow: visible !important;
@@ -997,7 +996,7 @@ export const STYLES = `
   /* TYPE STICKER */
   yt-live-chat-paid-sticker-renderer {
     /* text-align: center !important; */
-    margin: 15px 20px 15px 20px !important;
+    margin: 5px 20px 5px 20px !important;
     background: var(--all-background-color) !important;
     border: 3px solid var(--membership-border-color) !important;
     border-radius: 4px !important;
@@ -1333,4 +1332,5 @@ export const STYLES = `
   #menu {
     display: none !important;
   }
+
 `;
