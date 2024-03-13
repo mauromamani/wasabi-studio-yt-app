@@ -15,8 +15,10 @@ import { SaveIcon } from '../icons/SaveIcon';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { MdContentCopy } from 'react-icons/md';
 import { STYLES } from '../../../modules/home/html/styles';
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleCopyToClipboard = () => {
@@ -26,6 +28,10 @@ export const Navbar = () => {
 
   const handleSaveLocal = () => {
     localStorage.setItem('chatbox-name-styles', 'modificacion');
+  };
+
+  const handleResetStyles = () => {
+    navigate('/testing');
   };
 
   return (
@@ -46,6 +52,7 @@ export const Navbar = () => {
             variant='bordered'
             className='text-gray-300 font-semibold border-dark'
             startContent={<ReloadIcon />}
+            onClick={handleResetStyles}
           >
             Reset
           </Button>
