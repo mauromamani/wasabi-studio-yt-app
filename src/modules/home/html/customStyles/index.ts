@@ -22,11 +22,20 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
         }
 
         .container {
+          height: 91vh !important;
           background-color: transparent !important;
           width: 100%;
           position: relative;
           overflow: hidden;
           scroll-width: none;
+        }
+
+        #items {
+          display: flex !important;
+          flex-direction: column !important;
+          position: absolute !important;
+          bottom: 0 !important;
+          width: 100% !important;
         }
 
         ${customStyles}
@@ -46,7 +55,7 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
                                             <div id="contents" class="style-scope yt-live-chat-item-list-renderer">
                                                 <div id="item-scroller" class="style-scope yt-live-chat-item-list-renderer animated">
                                                     <div id="item-offset" class="style-scope yt-live-chat-item-list-renderer">
-                                                        <div id="items" class="style-scope yt-live-chat-item-list-renderer widget-wrapper" style="transform: translateY(0px); height: 100%;">
+                                                        <div id="items" class="style-scope yt-live-chat-item-list-renderer widget-wrapper">
                                                           ${content
                                                             .map((c) => c())
                                                             .join('')}
