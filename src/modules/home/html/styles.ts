@@ -396,7 +396,7 @@ export const STYLES = `
   yt-live-chat-paid-message-renderer #card {
     border-radius: 2px !important;
     color: black !important;
-    /* background: var(--yt-live-chat-paid-message-secondary-color) !important; */
+    /* background: var(--yt-live-chat-paid-message-primary-color) !important; */
     /* background: transparent !important; */
     /* width: 70vw !important; */
     position: relative !important;
@@ -501,6 +501,7 @@ export const STYLES = `
   yt-live-chat-paid-message-renderer #message * {
     text-align: center !important;
     font-family: var(--font-family) !important;
+    font-size: var(--sc-message-font-size) !important;
     color: var(--all-message-color) !important;
     font-weight: 400 !important;
   }

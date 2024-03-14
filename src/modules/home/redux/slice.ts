@@ -7,6 +7,14 @@ import { MEMBER_CHAT } from '../html/chats/member';
 import { VIEWER_CHAT } from '../html/chats/viewer';
 import { MEMHO, MEMPM } from '../html/membership/membership';
 import { GIFT } from '../html/gift/gift';
+import { TIER1_SUPERCHAT } from '../html/superchat/tier1';
+import { TIER2_SUPERCHAT } from '../html/superchat/tier2';
+import { TIER3_SUPERCHAT } from '../html/superchat/Tier3';
+import { TIER4_SUPERCHAT } from '../html/superchat/Tier4';
+import { TIER5_SUPERCHAT } from '../html/superchat/Tier5';
+import { TIER6_SUPERCHAT } from '../html/superchat/Tier6';
+import { TIER7_SUPERCHAT } from '../html/superchat/Tier7';
+import { STICKER } from '../html/sticker/sticker';
 
 interface EditorState {
   stylesConfig: StylesConfig;
@@ -49,6 +57,14 @@ const initialState: EditorState = {
     MEMHO,
     MEMPM,
     GIFT,
+    TIER1_SUPERCHAT,
+    TIER2_SUPERCHAT,
+    TIER3_SUPERCHAT,
+    TIER4_SUPERCHAT,
+    TIER5_SUPERCHAT,
+    TIER6_SUPERCHAT,
+    TIER7_SUPERCHAT,
+    STICKER,
   ],
 };
 
@@ -60,6 +76,11 @@ const randomChat = () => {
 const randomMembership = () => {
   const memberships = [MEMHO, MEMPM];
   return memberships[Math.floor(Math.random() * memberships.length)];
+};
+
+const superchat = () => {
+  const superchats = [TIER1_SUPERCHAT, TIER2_SUPERCHAT];
+  return superchats[Math.floor(Math.random() * superchats.length)];
 };
 
 export const editorSlice = createSlice({
@@ -79,6 +100,10 @@ export const editorSlice = createSlice({
       let testingContent: any = randomMembership();
       if (payload === 'CHAT') {
         testingContent = randomChat();
+      }
+
+      if (payload === 'SUPERCHAT') {
+        testingContent = superchat();
       }
 
       state.testingContent.push(testingContent);

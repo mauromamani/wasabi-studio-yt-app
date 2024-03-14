@@ -19,7 +19,47 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip {
           top: 0px !important;
+
         }
+
+
+
+        yt-live-chat-paid-message-renderer #card {
+          background: var(--yt-live-chat-paid-message-primary-color) !important; 
+        }
+
+        yt-live-chat-paid-message-renderer #header {
+          z-index: 0 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header #timestamp {
+          display: none !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header::before {
+          z-index: 1 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header::after {
+          z-index: 1 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #content {
+          position: relative !important;
+          z-index: 10 !important;
+        }
+
+        yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
+          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+        }
+
+        yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
+          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+          margin-top: 6px !important;
+          margin-left: 5px !important;
+        }
+
+
 
         .container {
           height: 91vh !important;
@@ -90,8 +130,45 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
 
         yt-live-chat-text-message-renderer,
         yt-live-chat-membership-item-renderer,
+        yt-live-chat-paid-message-renderer,
+        yt-live-chat-paid-sticker-renderer,
         ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
           animation: none !important;
+        }
+
+        yt-live-chat-paid-message-renderer #card {
+          background: var(--yt-live-chat-paid-message-primary-color) !important; 
+        }
+
+        yt-live-chat-paid-message-renderer #header {
+          z-index: 0 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header #timestamp {
+          display: none !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header::before {
+          z-index: 1 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #header::after {
+          z-index: 1 !important;
+        }
+
+        yt-live-chat-paid-message-renderer #content {
+          position: relative !important;
+          z-index: 10 !important;
+        }
+
+        yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
+          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+        }
+
+        yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
+          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+          margin-top: 3px !important;
+          margin-left: 5px !important;
         }
 
         ${customStyles}
@@ -179,7 +256,7 @@ export const ROOT_STYLES = (config: StylesConfig) => `
 
     /* sc-font-size */
     --sc-name-font-size: ${config.supportCardTitleFontSize}px;
-    --sc-amount-font-size: ${config.supportCardMessageFontSize}px;
+    --sc-amount-font-size: ${config.supportCardTitleFontSize - 3}px;
     --sc-message-font-size: ${config.supportCardMessageFontSize}px;
     /* end-sc-font-size */
 
