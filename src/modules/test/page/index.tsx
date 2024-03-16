@@ -9,10 +9,9 @@ import {
   SuperChatIcon,
 } from '../../../shared/components/icons/YtTestingIcons';
 import {
-  MESSAGE_RENDERER,
+  ROOT_STYLES,
   YT_CONTAINER_TESTING_ISOLATED,
 } from '../../home/html/customStyles';
-import ReactHtmlParser from 'react-html-parser';
 import { actions } from '../../home/redux/slice';
 import { Button } from '@nextui-org/react';
 
@@ -23,13 +22,9 @@ const ButtonIcon = ({
   children: React.ReactNode;
   action: any;
 }) => {
-  const { testingMode } = useAppSelector((state) => state.editor);
   const dispatch = useAppDispatch();
 
   const handleTestingMode = () => {
-    if (!testingMode) {
-      dispatch(actions.setTestingMode(true));
-    }
     dispatch(action);
   };
 
@@ -67,7 +62,7 @@ export const TestPage = () => {
   );
 
   const customStyles = () => {
-    const messageRender = MESSAGE_RENDERER(stylesConfig);
+    const messageRender = ROOT_STYLES(stylesConfig);
 
     return messageRender;
   };
@@ -77,17 +72,14 @@ export const TestPage = () => {
       <div className='bg-transparent' style={{ background: 'transparent' }}>
         <div className=''></div>
 
-        {/* <div
+        <div
           dangerouslySetInnerHTML={{
             __html: YT_CONTAINER_TESTING_ISOLATED(
               customStyles(),
               testingContent
             ),
           }}
-        /> */}
-        {ReactHtmlParser(
-          YT_CONTAINER_TESTING_ISOLATED(customStyles(), testingContent)
-        )}
+        />
 
         <div className='p-5 py-7 flex justify-center items-end bg-red-200'>
           {buttons.map((button) => (

@@ -5,116 +5,135 @@ import { STYLES } from '../styles';
 export const YT_CONTAINER_TESTING_ISOLATED = (
   customStyles: string,
   content: any[]
-) => `
-      <style>
-        ${STYLES}
-    
-        html {
-          background: transparent !important;
-        }
-
-        body {
-          background: transparent !important;
-        }
-
-        yt-live-chat-text-message-renderer yt-live-chat-author-chip {
-          top: 0px !important;
-
-        }
+) => {
+  return `
+  <style>
+    ${STYLES}
 
 
+    html {
+      background: transparent !important;
+    }
 
-        yt-live-chat-paid-message-renderer #card {
-          background: var(--yt-live-chat-paid-message-primary-color) !important; 
-        }
+    body {
+      background: transparent !important;
+    }
 
-        yt-live-chat-paid-message-renderer #header {
-          z-index: 0 !important;
-        }
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+      top: 0px !important;
 
-        yt-live-chat-paid-message-renderer #header #timestamp {
-          display: none !important;
-        }
+    }
 
-        yt-live-chat-paid-message-renderer #header::before {
-          z-index: 1 !important;
-        }
+    yt-live-chat-paid-message-renderer #card {
+      background: var(--yt-live-chat-paid-message-primary-color) !important; 
+    }
 
-        yt-live-chat-paid-message-renderer #header::after {
-          z-index: 1 !important;
-        }
+    yt-live-chat-paid-message-renderer #header {
+      z-index: 0 !important;
+    }
 
-        yt-live-chat-paid-message-renderer #content {
-          position: relative !important;
-          z-index: 10 !important;
-        }
+    yt-live-chat-paid-message-renderer #header #timestamp {
+      display: none !important;
+    }
 
-        yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
-          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
-        }
+    yt-live-chat-paid-message-renderer #header::before {
+      z-index: 1 !important;
+    }
 
-        yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
-          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
-          margin-top: 6px !important;
-          margin-left: 5px !important;
-        }
+    yt-live-chat-paid-message-renderer #header::after {
+      z-index: 1 !important;
+    }
 
+    yt-live-chat-paid-message-renderer #content {
+      position: relative !important;
+      z-index: 10 !important;
+    }
 
+    yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
+      color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+    }
 
-        .container {
-          height: 91vh !important;
-          background-color: transparent !important;
-          width: 100%;
-          position: relative;
-          overflow: hidden;
-          scroll-width: none;
-        }
+    yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
+      color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+      margin-top: 6px !important;
+      margin-left: 5px !important;
+    }
 
-        #items {
-          display: flex !important;
-          flex-direction: column !important;
-          position: absolute !important;
-          bottom: 0 !important;
-          width: 100% !important;
-        }
+    yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer {
+      background: var(--yt-live-chat-paid-sticker-background-color) !important;
+    }
 
-        ${customStyles}
-      </style>
+    yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer #timestamp {
+      display: none !important;
+    }
 
-      <div class="container">
-        <div class="fixed-container">
-          <yt-live-chat-app>
-            <div id="contents" class="style-scope yt-live-chat-app">
-                <yt-live-chat-renderer class="style-scope yt-live-chat-app" hide-timestamps="" darker-dark-theme="" has-ticker="" has-input-action-panel="">
-                    <iron-pages id="content-pages" class="style-scope yt-live-chat-renderer">
-                        <div id="chat-messages" class="style-scope yt-live-chat-renderer iron-selected">
-                            <div id="contents" class="style-scope yt-live-chat-renderer">
-                                <div id="chat" class="style-scope yt-live-chat-renderer">
-                                    <div id="item-list" class="style-scope yt-live-chat-renderer">
-                                        <yt-live-chat-item-list-renderer class="style-scope yt-live-chat-renderer" allow-scroll="" id="live-chat-item-list-panel">
-                                            <div id="contents" class="style-scope yt-live-chat-item-list-renderer">
-                                                <div id="item-scroller" class="style-scope yt-live-chat-item-list-renderer animated">
-                                                    <div id="item-offset" class="style-scope yt-live-chat-item-list-renderer">
-                                                        <div id="items" class="style-scope yt-live-chat-item-list-renderer widget-wrapper">
-                                                          ${content
-                                                            .map((c) => c())
-                                                            .join('')}
-                                                        </div>
+    yt-live-chat-text-message-renderer,
+    yt-live-chat-membership-item-renderer,
+    yt-live-chat-paid-message-renderer,
+    yt-live-chat-paid-sticker-renderer,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
+      animation: none !important;
+    }
+
+    .container {
+      height: 91vh !important;
+      background-color: transparent !important;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      scroll-width: none;
+    }
+
+    #items {
+      display: flex !important;
+      flex-direction: column !important;
+      position: absolute !important;
+      bottom: 0 !important;
+      width: 100% !important;
+    }
+
+    #items > :last-child {
+    animation: slide-in-left 0.5s ease both !important;
+    }
+
+    ${customStyles}
+  </style>
+
+  <div class="container">
+    <div class="fixed-container">
+      <yt-live-chat-app>
+        <div id="contents" class="style-scope yt-live-chat-app">
+            <yt-live-chat-renderer class="style-scope yt-live-chat-app" hide-timestamps="" darker-dark-theme="" has-ticker="" has-input-action-panel="">
+                <iron-pages id="content-pages" class="style-scope yt-live-chat-renderer">
+                    <div id="chat-messages" class="style-scope yt-live-chat-renderer iron-selected">
+                        <div id="contents" class="style-scope yt-live-chat-renderer">
+                            <div id="chat" class="style-scope yt-live-chat-renderer">
+                                <div id="item-list" class="style-scope yt-live-chat-renderer">
+                                    <yt-live-chat-item-list-renderer class="style-scope yt-live-chat-renderer" allow-scroll="" id="live-chat-item-list-panel">
+                                        <div id="contents" class="style-scope yt-live-chat-item-list-renderer">
+                                            <div id="item-scroller" class="style-scope yt-live-chat-item-list-renderer animated">
+                                                <div id="item-offset" class="style-scope yt-live-chat-item-list-renderer">
+                                                    <div id="items" class="style-scope yt-live-chat-item-list-renderer widget-wrapper">
+                                                      ${content
+                                                        .map((c) => c())
+                                                        .join('')}
                                                     </div>
                                                 </div>
                                             </div>
-                                        </yt-live-chat-item-list-renderer>
-                                    </div>
+                                        </div>
+                                    </yt-live-chat-item-list-renderer>
                                 </div>
                             </div>
                         </div>
-                    </iron-pages>
-                </yt-live-chat-renderer>
-            </div>
-          </yt-live-chat-app>
+                    </div>
+                </iron-pages>
+            </yt-live-chat-renderer>
         </div>
-      </div>
+      </yt-live-chat-app>
+    </div>
+  </div>
 `;
+};
 
 export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
       <style>
@@ -169,6 +188,14 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
           color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
           margin-top: 3px !important;
           margin-left: 5px !important;
+        }
+
+        yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer {
+          background: var(--yt-live-chat-paid-sticker-background-color) !important;
+        }
+
+        yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer #timestamp {
+          display: none !important;
         }
 
         ${customStyles}
@@ -309,32 +336,4 @@ export const ROOT_STYLES = (config: StylesConfig) => `
   }
   /************************** END SUPPORT CARD DESIGN **************************/
 
-`;
-
-export const MESSAGE_RENDERER = (config: StylesConfig) => `
-  /* Author Name */
-  yt-live-chat-text-message-renderer #author-name {
-    font-family: 'Nunito' !important;
-    font-size: ${config.chatAuthorFontSize}px !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    white-space: nowrap !important;
-    width: fit-content !important;
-    max-width: 40vw !important;
-    z-index: 3 !important;
-    position: relative !important;
-    padding: 0 !important;
-  }
-
-  /* Message Renderer */
-  yt-live-chat-text-message-renderer #message, yt-live-chat-text-message-renderer #message * {
-    font-family: 'Nunito' !important;
-    font-size: ${config.chatMessageFontSize}px !important;
-    font-weight: 500 !important;
-    line-height: 100% !important;
-    text-align: start !important;
-    word-break: break-all;
-  }
 `;

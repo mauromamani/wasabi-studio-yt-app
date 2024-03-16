@@ -8,7 +8,7 @@ import { ThemeContext } from '../../../../shared/context/themes/index.theme';
 import { DarkModeIcon } from '../../../../shared/components/icons/DarkModeIcon';
 
 export const Preview = () => {
-  const { stylesConfig, editorContent } = useAppSelector(
+  const { stylesConfig, editorContent, uniqueElement } = useAppSelector(
     (state) => state.editor
   );
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -22,6 +22,12 @@ export const Preview = () => {
     return messageRender;
   };
 
+  const capitalize = (s: string) => {
+    if (s === 'Full Chat') return s;
+
+    return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
+  };
+
   return (
     <ScrollShadow className='w-full h-[calc(100vh-80px)]'>
       <article
@@ -31,7 +37,9 @@ export const Preview = () => {
         } flex-1  py-8 px-20 min-h-[calc(100vh-81px)]`}
       >
         <div className='flex justify-between items-center'>
-          <h2 className='text-xl font-bold'>Chat Preview</h2>
+          <h2 className='text-xl font-bold'>
+            {capitalize(uniqueElement.type)} Preview
+          </h2>
           <Button
             isIconOnly
             className='bg-transparent'

@@ -16,22 +16,51 @@ import { CopyBlock, dracula } from 'react-code-blocks';
 import { MdContentCopy } from 'react-icons/md';
 import { STYLES } from '../../../modules/home/html/styles';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../../core/store/hooks';
+import { actions } from '../../../modules/home/redux/slice';
+import { StylesConfig } from '../../../modules/home/interfaces';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/themes/index.theme';
 
 export const Navbar = () => {
+  const { stylesToCopy, stylesConfig, chatBoxName } = useAppSelector(
+    (state) => state.editor
+  );
+  const { theme } = useContext(ThemeContext);
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleCopyToClipboard = () => {
-    navigator.clipboard.writeText(STYLES);
-    handleSaveLocal();
+    navigator.clipboard.writeText(stylesToCopy);
+    handleSaveLocal(stylesConfig);
   };
 
-  const handleSaveLocal = () => {
-    localStorage.setItem('chatbox-name-styles', 'modificacion');
+  const handleSaveLocal = (stylesConfig: StylesConfig) => {
+    const stylesToSave = JSON.stringify(stylesConfig);
+
+    localStorage.setItem('chatbox-name-styles', stylesToSave);
+  };
+
+  const handleOpenModal = () => {
+    dispatch(actions.generateStylesToCopy());
+    onOpen();
   };
 
   const handleResetStyles = () => {
+    dispatch(actions.resetStyles());
+  };
+
+  const handleGoTesting = () => {
     navigate('/testing');
+  };
+
+  const buttonStyles = () => {
+    if (theme === 'dark') {
+      return 'text-gray-300 border-dark';
+    }
+
+    return 'text-gray-500 border-gray-500';
   };
 
   return (
@@ -42,7 +71,7 @@ export const Navbar = () => {
             className='text-lg font-semibold'
             style={{ letterSpacing: '0.5px' }}
           >
-            Chatbox Name
+            {chatBoxName}
           </h2>
           <h3 className='text-xs'>WasabiStudio's Chatbox Editor</h3>
         </div>
@@ -50,15 +79,15 @@ export const Navbar = () => {
         <div className='flex space-x-3'>
           <Button
             variant='bordered'
-            className='text-gray-300 font-semibold border-dark'
-            onClick={handleResetStyles}
+            className={`font-semibold ${buttonStyles()}`}
+            onClick={handleGoTesting}
           >
             Testing
           </Button>
 
           <Button
             variant='bordered'
-            className='text-gray-300 font-semibold border-dark'
+            className={`font-semibold ${buttonStyles()}`}
             startContent={<ReloadIcon />}
             onClick={handleResetStyles}
           >
@@ -68,7 +97,7 @@ export const Navbar = () => {
             color='success'
             className='bg-green-600 text-gray-200 font-semibold'
             startContent={<SaveIcon />}
-            onPress={onOpen}
+            onPress={handleOpenModal}
           >
             Save
           </Button>
@@ -95,7 +124,7 @@ export const Navbar = () => {
                   language='css'
                   theme={dracula}
                   wrapLongLines
-                  onCopy={handleSaveLocal}
+                  onCopy={() => handleCopyToClipboard()}
                 />
               </ModalBody>
               <ModalFooter>

@@ -7,11 +7,11 @@ import {
   StickerIcon,
   SuperChatIcon,
 } from '../../../../shared/components/icons/YtTestingIcons';
-// import { useAppDispatch, useAppSelector } from '../../../../core/store/hooks';
 import { actions } from '../../redux/slice';
 import { ChatDesign } from './ChatDesign';
 import { BadgeDesign } from './BadgeDesign';
 import { SupportCardDesign } from './SupportCardDesign';
+import { useAppDispatch, useAppSelector } from '../../../../core/store/hooks';
 
 interface Items {
   title: string;
@@ -25,13 +25,34 @@ const items: Items[] = [
   { title: 'Support Card Design', content: <SupportCardDesign /> },
 ];
 
-const ButtonIcon = ({ children }: { children: React.ReactNode }) => {
-  const handleTestingMode = () => {};
+const ButtonIcon = ({
+  children,
+  action,
+  type,
+}: {
+  children: React.ReactNode;
+  action: any;
+  type: string;
+}) => {
+  const { uniqueElement } = useAppSelector((state) => state.editor);
+  const dispatch = useAppDispatch();
+
+  const handleTestingMode = () => {
+    dispatch(action);
+  };
+
+  const selectedStyle = () => {
+    if (uniqueElement.unique && uniqueElement.type === type) {
+      return 'p-2';
+    }
+
+    return 'bg-transparent';
+  };
 
   return (
     <Button
       isIconOnly
-      className='mr-1 bg-transparent '
+      className={`mr-1 ${selectedStyle()}`}
       radius='full'
       onPress={handleTestingMode}
     >
@@ -41,30 +62,41 @@ const ButtonIcon = ({ children }: { children: React.ReactNode }) => {
 };
 
 const buttons = [
-  { key: 1, icon: <ChatIcon />, action: actions.addTestingContent('CHAT') },
   {
-    key: 2,
+    key: 'CHAT',
+    icon: <ChatIcon />,
+    action: actions.setUniqueElements('CHAT'),
+  },
+  {
+    key: 'SUPERCHAT',
     icon: <SuperChatIcon />,
-    action: actions.addTestingContent('SUPERCHAT'),
+    action: actions.setUniqueElements('SUPERCHAT'),
   },
   {
-    key: 3,
+    key: 'STICKER',
     icon: <StickerIcon />,
-    action: actions.addTestingContent('STICKER'),
+    action: actions.setUniqueElements('STICKER'),
   },
-  { key: 4, icon: <MemberIcon />, action: actions.addTestingContent('MEMBER') },
-  { key: 5, icon: <GiftIcon />, action: actions.addTestingContent('GIFT') },
+  {
+    key: 'MEMBER',
+    icon: <MemberIcon />,
+    action: actions.setUniqueElements('MEMBER'),
+  },
+  {
+    key: 'GIFT',
+    icon: <GiftIcon />,
+    action: actions.setUniqueElements('GIFT'),
+  },
 ];
 
 export const Editor = () => {
-  // const { testingMode } = useAppSelector((state) => state.editor);
-  // const dispatch = useAppDispatch();
-
   return (
     <article id='editor' className='w-1/4'>
       <div className='p-5 py-7 flex justify-center items-end'>
         {buttons.map((button) => (
-          <ButtonIcon key={button.key}>{button.icon}</ButtonIcon>
+          <ButtonIcon key={button.key} type={button.key} action={button.action}>
+            {button.icon}
+          </ButtonIcon>
         ))}
       </div>
 

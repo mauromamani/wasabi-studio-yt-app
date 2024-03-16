@@ -1,4 +1,5 @@
 export interface StylesConfig {
+  [key: string]: number | boolean;
   /**
    * Badge
    */
