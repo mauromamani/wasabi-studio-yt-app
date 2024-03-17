@@ -45,6 +45,11 @@ interface EditorState {
 
 const stylesConfigInitialState: StylesConfig = {
   /**
+   * Chat Layout
+   */
+  layoutScale: 1,
+  layoutAlign: 'start',
+  /**
    * Badge
    */
   badgeDisplayBadge: true,
@@ -55,16 +60,19 @@ const stylesConfigInitialState: StylesConfig = {
    */
   chatAllCaps: false,
   chatMessageFontSize: 20,
+  chatEmoteSize: 20,
   chatAuthorFontSize: 20,
 
   /**
    * Support Card Design
    */
   supportCardAllCaps: false,
+  supportCardDisplayCard: true,
   supportCardTitleFontSize: 20,
   supportCardSubTitleFontSize: 15,
   supportCardOtherTextFontSize: 15,
   supportCardMessageFontSize: 14,
+  supportCardEmoteSize: 14,
 };
 
 const editorContentInitialState = [
@@ -76,7 +84,7 @@ const editorContentInitialState = [
 ];
 
 const initialState: EditorState = {
-  chatBoxName: 'Oriental Dark Chatbox',
+  chatBoxName: 'Oriental Chatbox: Obsidian',
   stylesConfig: stylesConfigInitialState,
   testingContent: [],
   editorContent: editorContentInitialState,

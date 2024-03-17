@@ -12,6 +12,7 @@ import { ChatDesign } from './ChatDesign';
 import { BadgeDesign } from './BadgeDesign';
 import { SupportCardDesign } from './SupportCardDesign';
 import { useAppDispatch, useAppSelector } from '../../../../core/store/hooks';
+import { ChatLayoutDesign } from './ChatLayoutDesign';
 
 interface Items {
   title: string;
@@ -19,7 +20,7 @@ interface Items {
 }
 
 const items: Items[] = [
-  { title: 'Chat Layout', content: <ChatDesign /> },
+  { title: 'Chat Layout', content: <ChatLayoutDesign /> },
   { title: 'Badge', content: <BadgeDesign /> },
   { title: 'Chat Design', content: <ChatDesign /> },
   { title: 'Support Card Design', content: <SupportCardDesign /> },

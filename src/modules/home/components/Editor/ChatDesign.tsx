@@ -17,6 +17,9 @@ export const ChatDesign = () => {
       case 'chatAuthor':
         key = 'chatAuthorFontSize';
         break;
+      case 'chatEmote':
+        key = 'chatEmoteSize';
+        break;
     }
 
     dispatch(
@@ -48,6 +51,21 @@ export const ChatDesign = () => {
           All Caps
         </Checkbox>
 
+        {/* AUTHOR FONT SIZE */}
+        <Slider
+          size='sm'
+          label='Author Font Size'
+          step={1}
+          maxValue={32}
+          minValue={10}
+          defaultValue={16}
+          className='w-full'
+          value={stylesConfig.chatAuthorFontSize}
+          onChange={(value) => handleSliderChange(value, 'chatAuthor')}
+          getValue={(value) => `${value}px`}
+          color='success'
+        />
+
         {/* MESSAGE FONT SIZE */}
         <Slider
           size='sm'
@@ -62,17 +80,17 @@ export const ChatDesign = () => {
           color='success'
         />
 
-        {/* AUTHOR FONT SIZE */}
+        {/* EMOTE FONT SIZE */}
         <Slider
           size='sm'
-          label='Author Font Size'
+          label='Emote Font Size'
           step={1}
           maxValue={32}
           minValue={10}
           defaultValue={16}
           className='w-full'
-          value={stylesConfig.chatAuthorFontSize}
-          onChange={(value) => handleSliderChange(value, 'chatAuthor')}
+          value={stylesConfig.chatEmoteSize}
+          onChange={(value) => handleSliderChange(value, 'chatEmote')}
           getValue={(value) => `${value}px`}
           color='success'
         />

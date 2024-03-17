@@ -143,17 +143,42 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
           top: 0px !important;
         }
 
+        yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
+          top: 8px !important;
+        }
+
+        yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+          top: 9px !important;
+        }
+
+        yt-live-chat-text-message-renderer #message {
+          display: flex !important;
+          align-items: center !important;
+        }
+
+        yt-live-chat-text-message-renderer #message > img:first-child {
+          margin-left: 5px !important;
+        }
+
+
+        yt-live-chat-membership-item-renderer #message,
+        yt-live-chat-paid-message-renderer #message {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: end !important;
+        }
+
+        yt-live-chat-membership-item-renderer #message > img:first-child,
+        yt-live-chat-paid-message-renderer #message > img:first-child {
+          margin-left: 5px !important;
+          margin-bottom: 2px !important;
+          vertical-align: middle !important;
+        }
+
         body {
           overflow: hidden;
         }
 
-        yt-live-chat-text-message-renderer,
-        yt-live-chat-membership-item-renderer,
-        yt-live-chat-paid-message-renderer,
-        yt-live-chat-paid-sticker-renderer,
-        ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
-          animation: none !important;
-        }
 
         yt-live-chat-paid-message-renderer #card {
           background: var(--yt-live-chat-paid-message-primary-color) !important; 
@@ -199,9 +224,17 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
         }
 
         ${customStyles}
+
+        yt-live-chat-text-message-renderer,
+        yt-live-chat-membership-item-renderer,
+        yt-live-chat-paid-message-renderer,
+        yt-live-chat-paid-sticker-renderer,
+        ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
+          animation: none !important;
+        }
       </style>
 
-        <div style="width: 60%">
+        <div style="width: 70%">
           <yt-live-chat-app>
             <div id="contents" class="style-scope yt-live-chat-app">
                 <yt-live-chat-renderer class="style-scope yt-live-chat-app" hide-timestamps="" darker-dark-theme="" has-ticker="" has-input-action-panel="" style="--scrollbar-width: 17px;">
@@ -234,106 +267,177 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
         </div>
 `;
 
-export const ROOT_STYLES = (config: StylesConfig) => `
-  :root {
-    --font-family: 'Ibarra Real Nova', serif;
+export const ROOT_STYLES = (config: StylesConfig) => {
+  return `
+    :root {
+      --font-family: 'Ibarra Real Nova', serif;
 
-    /* all */
-    --all-background-message-color: linear-gradient(
-      98deg,
-      rgba(18, 18, 18, 1) 12%,
-      rgba(33, 31, 30, 1) 61%
-    );
-    --all-background-color: #121212;
-    --all-message-color: #ffffff;
-    --all-border-name-color: #dbb092;
-    --all-name-color: #dbb092;
-    --all-badge-color: #ea5272;
+      /* all */
+      --all-background-message-color: linear-gradient(
+        98deg,
+        rgba(18, 18, 18, 1) 12%,
+        rgba(33, 31, 30, 1) 61%
+      );
+      --all-background-color: #121212;
+      --all-message-color: #ffffff;
+      --all-border-name-color: #dbb092;
+      --all-name-color: #dbb092;
+      --all-badge-color: #ea5272;
 
-    /* membership */
-    --membership-name-color: #dbb092;
-    --membership-subtext-color: #ea5272;
-    --membership-other-text-color: #ea5272;
-    --membership-message-color: #ffffff;
-    --membership-background-color: #121212;
-    --membership-border-color: #dbb092;
-    --membership-background-message-color: #121212;
-    --membership-border-message-color: #dbb092;
-    /* end-membership */
+      /* membership */
+      --membership-name-color: #dbb092;
+      --membership-subtext-color: #ea5272;
+      --membership-other-text-color: #ea5272;
+      --membership-message-color: #ffffff;
+      --membership-background-color: #121212;
+      --membership-border-color: #dbb092;
+      --membership-background-message-color: #121212;
+      --membership-border-message-color: #dbb092;
+      /* end-membership */
 
-    /* sc */
-    --sc-name-color: #ffffff;
-    --sc-amount-color: #ffffff;
-    --sc-message-color: #e36868;
-    --sc-background-color: #e36868;
-    --sc-border-color: #ffffff;
-    --sc-background-message-color: #fffffc;
-    --sc-border-message-color: #e36868;
-    --sc-decoration-color: #ffffff;
-    /* end-sc */
+      /* sc */
+      --sc-name-color: #ffffff;
+      --sc-amount-color: #ffffff;
+      --sc-message-color: #e36868;
+      --sc-background-color: #e36868;
+      --sc-border-color: #ffffff;
+      --sc-background-message-color: #fffffc;
+      --sc-border-message-color: #e36868;
+      --sc-decoration-color: #ffffff;
+      /* end-sc */
 
-    /* chat-font-size */
-    --name-font-size: ${config.chatAuthorFontSize}px;
-    --message-font-size: ${config.chatMessageFontSize}px;
-    /* end-chat-font-size */
+      /* chat-font-size */
+      --name-font-size: ${config.chatAuthorFontSize}px;
+      --message-font-size: ${config.chatMessageFontSize}px;
+      /* end-chat-font-size */
 
-    /* profile-toggle */
-    --show-profile-picture: block;
-    /* end-profile-toggle */
+      /* profile-toggle */
+      --show-profile-picture: block;
+      /* end-profile-toggle */
 
-    /* sc-font-size */
-    --sc-name-font-size: ${config.supportCardTitleFontSize}px;
-    --sc-amount-font-size: ${config.supportCardTitleFontSize - 3}px;
-    --sc-message-font-size: ${config.supportCardMessageFontSize}px;
-    /* end-sc-font-size */
+      /* sc-font-size */
+      --sc-name-font-size: ${config.supportCardTitleFontSize}px;
+      --sc-amount-font-size: ${config.supportCardTitleFontSize - 3}px;
+      --sc-message-font-size: ${config.supportCardMessageFontSize}px;
+      /* end-sc-font-size */
 
-    /* membership-font-size */
-    --membership-name-font-size: ${config.supportCardTitleFontSize}px;
-    --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
-    --membership-other-text-font-size: ${config.supportCardOtherTextFontSize}px;
-    --membership-message-font-size: ${config.supportCardMessageFontSize}px;
-    /* end-membership-font-size */
+      /* membership-font-size */
+      --membership-name-font-size: ${config.supportCardTitleFontSize}px;
+      --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
+      --membership-other-text-font-size: ${
+        config.supportCardOtherTextFontSize
+      }px;
+      --membership-message-font-size: ${config.supportCardMessageFontSize}px;
+      /* end-membership-font-size */
+    }
+
+
+    yt-live-chat-text-message-renderer  {
+      margin: 10px ${scaleMessageMarginX(config.layoutScale)} !important;
+    }
+
+    yt-live-chat-text-message-renderer * {
+      transform: scale(${config.layoutScale}) !important;
+    }
+
+    /************************** START CHAT LAYOUT **************************/
+    yt-live-chat-text-message-renderer {
+      align-self: ${config.layoutAlign} !important;
+      animation: ${
+        config.layoutAlign === 'start' ? 'slide-in-left' : 'slide-in-right'
+      } 0.5s ease both !important;
+
+      transform: scaleX(${
+        config.layoutAlign === 'start' ? '1' : '-1'
+      }) !important;
+    }
+
+    yt-live-chat-text-message-renderer #message {
+      ${
+        config.layoutAlign === 'start' ? 'border-left' : 'border-right'
+      }: 3px solid var(--all-border-name-color) !important;
+
+      ${config.layoutAlign === 'end' ? 'border-left: none !important;' : ''}
+
+      transform-origin: initial !important;
+
+      transform: scaleX(${
+        config.layoutAlign === 'start' ? '1' : '-1'
+      }) !important;
+    }
+    /************************** END CHAT LAYOUT **************************/
+
+    /************************** START BADGE DESIGN **************************/
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
+      display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
+      font-size: ${config.badgeFontSize + 3}px !important;
+    }
+
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+      display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
+      font-size: ${config.badgeFontSize}px !important;
+    }
+    /************************** END BADGE DESIGN **************************/
+
+    /************************** START CHAT DESIGN **************************/
+    yt-live-chat-text-message-renderer * {
+      text-transform: ${config.chatAllCaps ? 'uppercase' : 'none'}  !important;
+    }
+
+    yt-live-chat-text-message-renderer #message > img {
+      width: ${config.chatEmoteSize}px !important;
+      height: ${config.chatEmoteSize}px !important;
+    }
+
+    /************************** END CHAT DESIGN **************************/
+
+    /************************** START SUPPORT CARD DESIGN **************************/
+    yt-live-chat-membership-item-renderer *,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer *,
+    yt-live-chat-paid-message-renderer *,
+    yt-live-chat-paid-sticker-renderer * {
+      text-transform: ${
+        config.supportCardAllCaps ? 'uppercase' : 'none'
+      }  !important;
+    }
+
+    yt-live-chat-membership-item-renderer #message > img,
+    yt-live-chat-paid-message-renderer #message > img {
+      width: ${config.supportCardEmoteSize}px !important;
+      height: ${config.supportCardEmoteSize}px !important;
+    }
+    /************************** END SUPPORT CARD DESIGN **************************/
+
+    @keyframes slide-in-right {
+      0% {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+    
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+  `;
+};
+
+const scaleMessageMarginX = (scale: number) => {
+  console.log(scale);
+
+  switch (true) {
+    case scale <= 1:
+      return '20px';
+    case scale <= 1.1:
+      return '60px';
+    case scale <= 1.2:
+      return '80px';
+    case scale <= 1.3:
+      return '100px';
+    case scale <= 1.4:
+      return '120px';
+    case scale <= 1.5:
+      return '140px';
   }
-
-  /*
-  yt-live-chat-text-message-renderer,
-  yt-live-chat-membership-item-renderer,
-  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
-    margin-top: 30px !important;
-  }
-
-  yt-live-chat-text-message-renderer *,
-  yt-live-chat-membership-item-renderer *,
-  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer * {
-    transform: scale(1.09) !important;
-  }*/
-
-
-  /************************** START BADGE DESIGN **************************/
-  yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-    display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
-    font-size: ${config.badgeFontSize + 3}px !important;
-  }
-
-  yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-    display: ${config.badgeDisplayBadge ? 'block' : 'none'} !important;
-    font-size: ${config.badgeFontSize}px !important;
-  }
-  /************************** END BADGE DESIGN **************************/
-
-  /************************** START CHAT DESIGN **************************/
-  yt-live-chat-text-message-renderer * {
-    text-transform: ${config.chatAllCaps ? 'uppercase' : 'none'}  !important;
-  }
-  /************************** END CHAT DESIGN **************************/
-
-  /************************** START SUPPORT CARD DESIGN **************************/
-  yt-live-chat-membership-item-renderer *,
-  ytd-sponsorships-live-chat-gift-purchase-announcement-renderer * {
-    text-transform: ${
-      config.supportCardAllCaps ? 'uppercase' : 'none'
-    }  !important;
-  }
-  /************************** END SUPPORT CARD DESIGN **************************/
-
-`;
+};

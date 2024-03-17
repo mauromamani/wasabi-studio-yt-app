@@ -14,7 +14,6 @@ import { ReloadIcon } from '../icons/ReloadIcon';
 import { SaveIcon } from '../icons/SaveIcon';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { MdContentCopy } from 'react-icons/md';
-import { STYLES } from '../../../modules/home/html/styles';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../core/store/hooks';
 import { actions } from '../../../modules/home/redux/slice';
@@ -120,11 +119,11 @@ export const Navbar = () => {
               </ModalHeader>
               <ModalBody className='overflow-auto max-h-[50vh]'>
                 <CopyBlock
-                  text={STYLES}
+                  text={stylesToCopy}
                   language='css'
                   theme={dracula}
                   wrapLongLines
-                  onCopy={() => handleCopyToClipboard()}
+                  // onCopy={() => handleCopyToClipboard()}
                 />
               </ModalBody>
               <ModalFooter>

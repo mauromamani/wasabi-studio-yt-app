@@ -64,7 +64,12 @@ const Tier2C = [
       </div>
       <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
         <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer"> Ikan ikan apa yg ga bisa
-          berenang? Ikan goreng </div>
+          berenang? Ikan goreng
+          <img
+      class="emoji yt-formatted-string style-scope yt-live-chat-text-message-renderer"
+      src="https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w24-h24-c-k-nd"
+      alt="hand-pink-waving" data-emoji-id="UCkszU2WH9gy1mb0dV-11UJg/G8AfY6yWGuKuhL0PlbiA2AE"
+      shared-tooltip-text=":hand-pink-waving:" id="emoji-3"> </div>
         <div id="input-container" class="style-scope yt-live-chat-paid-message-renderer"> <dom-if
             class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if> </div>
         <yt-formatted-string id="deleted-state" class="style-scope yt-live-chat-paid-message-renderer" is-empty="">

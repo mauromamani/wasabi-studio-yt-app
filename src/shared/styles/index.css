@@ -76,3 +76,33 @@
   background-position: 0 0, 17px 17px;
   background-size: 34px 34px;
 }
+
+*::-webkit-scrollbar {
+  height: 13px;
+  width: 13px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 7px;
+  background-color: #dfe9eb;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #dfe9eb;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #dfe9eb;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #16a34a;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #1abe56;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #1abe56;
+}

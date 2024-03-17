@@ -50,7 +50,7 @@ export const BadgeDesign = () => {
           size='sm'
           label='Badge Font Size'
           step={1}
-          maxValue={32}
+          maxValue={25}
           minValue={5}
           defaultValue={10}
           className='w-full'
