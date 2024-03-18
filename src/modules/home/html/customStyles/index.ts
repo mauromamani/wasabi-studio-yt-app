@@ -24,11 +24,11 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
         }
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-          top: 8px !important;
+          top: 10px !important;
         }
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-          top: 9px !important;
+          top: 2px !important;
         }
 
         yt-live-chat-text-message-renderer #message {
@@ -103,13 +103,6 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
           display: none !important;
         }
 
-    yt-live-chat-text-message-renderer,
-    yt-live-chat-membership-item-renderer,
-    yt-live-chat-paid-message-renderer,
-    yt-live-chat-paid-sticker-renderer,
-    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
-      animation: none !important;
-    }
 
     .container {
       height: 91vh !important;
@@ -128,11 +121,20 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
       width: 100% !important;
     }
 
-    #items > :last-child {
-    animation: slide-in-left 0.5s ease both !important;
-    }
 
     ${customStyles}
+
+    yt-live-chat-text-message-renderer,
+    yt-live-chat-membership-item-renderer,
+    yt-live-chat-paid-message-renderer,
+    yt-live-chat-paid-sticker-renderer,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
+      animation: none !important;
+    }
+
+    #items > :last-child {
+      animation: slide-in-left 0.5s ease both !important;
+    }
   </style>
 
   <div class="container">
@@ -180,12 +182,13 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
         }
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-          top: 8px !important;
+          top: 12px !important;
         }
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-          top: 9px !important;
+          top: 2px !important;
         }
+
 
         yt-live-chat-text-message-renderer #message {
           display: flex !important;
@@ -375,10 +378,8 @@ export const ROOT_STYLES = (config: StylesConfig) => {
       margin: 10px ${scaleMessageMarginX(config.layoutScale)} !important;
     }
 
-    yt-live-chat-text-message-renderer * {
-      transform: scale(${config.layoutScale}) !important;
-    }
     */
+
 
     /************************** START CHAT LAYOUT **************************/
     yt-live-chat-text-message-renderer,
@@ -389,6 +390,16 @@ export const ROOT_STYLES = (config: StylesConfig) => {
       animation: ${
         config.layoutAlign === 'start' ? 'slide-in-left' : 'slide-in-right'
       } 0.5s ease both !important;
+
+      margin-top: ${config.layoutMarginY + 20}px !important;
+      margin-bottom: ${config.layoutMarginY}px !important;
+      margin-left: ${config.layoutMarginX}px !important;
+      margin-right: ${config.layoutMarginX}px !important;
+    }
+
+    yt-live-chat-text-message-renderer {
+      margin-top: ${config.layoutMarginY - 3}px !important;
+      margin-bottom: ${config.layoutMarginY - 3}px !important;
     }
 
     yt-live-chat-text-message-renderer {
@@ -491,6 +502,13 @@ export const ROOT_STYLES = (config: StylesConfig) => {
       }  !important;
     }
 
+    yt-live-chat-membership-item-renderer,
+    ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
+    yt-live-chat-paid-message-renderer,
+    yt-live-chat-paid-sticker-renderer {
+      ${config.supportCardDisplayCard ? '' : 'display: none !important;'}
+    }
+
     yt-live-chat-membership-item-renderer #message > img,
     yt-live-chat-paid-message-renderer #message > img {
       width: ${config.supportCardEmoteSize}px !important;
@@ -509,7 +527,6 @@ export const ROOT_STYLES = (config: StylesConfig) => {
         opacity: 1;
       }
     }
-
 
   `;
 };

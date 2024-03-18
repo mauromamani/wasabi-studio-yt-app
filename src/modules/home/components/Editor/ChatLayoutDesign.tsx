@@ -14,6 +14,12 @@ export const ChatLayoutDesign = () => {
       case 'scale':
         key = 'layoutScale';
         break;
+      case 'marginY':
+        key = 'layoutMarginY';
+        break;
+      case 'marginX':
+        key = 'layoutMarginX';
+        break;
     }
 
     dispatch(
@@ -63,13 +69,43 @@ export const ChatLayoutDesign = () => {
           size='sm'
           label='Scale'
           step={0.01}
-          maxValue={1.5}
+          maxValue={1.3}
           minValue={0.5}
           defaultValue={1}
           className='w-full'
           value={stylesConfig.layoutScale}
           onChange={(value) => handleSliderChange(value, 'scale')}
           getValue={(value) => `${value}%`}
+          color='success'
+        />
+
+        {/* MARGIN Y */}
+        <Slider
+          size='sm'
+          label='Margin Y'
+          step={1}
+          maxValue={30}
+          minValue={0}
+          defaultValue={1}
+          className='w-full'
+          value={stylesConfig.layoutMarginY}
+          onChange={(value) => handleSliderChange(value, 'marginY')}
+          getValue={(value) => `${value}px`}
+          color='success'
+        />
+
+        {/* MARGIN X */}
+        <Slider
+          size='sm'
+          label='Margin X'
+          step={1}
+          maxValue={100}
+          minValue={15}
+          defaultValue={1}
+          className='w-full'
+          value={stylesConfig.layoutMarginX}
+          onChange={(value) => handleSliderChange(value, 'marginX')}
+          getValue={(value) => `${value}px`}
           color='success'
         />
       </div>

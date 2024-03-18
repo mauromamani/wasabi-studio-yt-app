@@ -45,19 +45,13 @@ export const SupportCardDesign = () => {
     );
   };
 
+  const disableInput = () => !stylesConfig.supportCardDisplayCard;
+
   return (
     <div className='pr-4 pl-2 pb-4'>
       <div id='messages-typo' className='space-y-3'>
         {/* DISPLAY BADGE */}
         <div className='flex flex-col space-y-2'>
-          <Checkbox
-            isSelected={stylesConfig.supportCardAllCaps}
-            onValueChange={(value) => handleChange('supportCardAllCaps', value)}
-            color='success'
-          >
-            All Caps
-          </Checkbox>
-
           <Checkbox
             isSelected={stylesConfig.supportCardDisplayCard}
             onValueChange={(value) =>
@@ -66,6 +60,15 @@ export const SupportCardDesign = () => {
             color='success'
           >
             Display Cards
+          </Checkbox>
+
+          <Checkbox
+            isSelected={stylesConfig.supportCardAllCaps}
+            onValueChange={(value) => handleChange('supportCardAllCaps', value)}
+            color='success'
+            isDisabled={disableInput()}
+          >
+            All Caps
           </Checkbox>
         </div>
 
@@ -82,6 +85,7 @@ export const SupportCardDesign = () => {
           onChange={(value) => handleSliderChange(value, 'title')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={disableInput()}
         />
 
         {/* SUBTITLE FONT SIZE */}
@@ -97,6 +101,7 @@ export const SupportCardDesign = () => {
           onChange={(value) => handleSliderChange(value, 'subtitle')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={disableInput()}
         />
 
         {/* OTHER FONT SIZE */}
@@ -112,6 +117,7 @@ export const SupportCardDesign = () => {
           onChange={(value) => handleSliderChange(value, 'other')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={disableInput()}
         />
 
         {/* MESSAGE FONT SIZE */}
@@ -127,6 +133,7 @@ export const SupportCardDesign = () => {
           onChange={(value) => handleSliderChange(value, 'message')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={disableInput()}
         />
 
         {/* EMOTE FONT SIZE */}
@@ -142,6 +149,7 @@ export const SupportCardDesign = () => {
           onChange={(value) => handleSliderChange(value, 'emote')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={disableInput()}
         />
       </div>
     </div>

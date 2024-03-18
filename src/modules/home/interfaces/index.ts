@@ -6,6 +6,8 @@ export interface StylesConfig {
    */
   layoutScale: number;
   layoutAlign: LayoutAlign;
+  layoutMarginY: number;
+  layoutMarginX: number;
   /**
    * Badge
    */

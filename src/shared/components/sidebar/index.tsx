@@ -3,7 +3,7 @@ import { Button, Image, Link, Tooltip } from '@nextui-org/react';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { SiKofi } from 'react-icons/si';
 import { useContext, useState } from 'react';
-import { ThemeContext } from '../../context/themes/index.theme';
+import { ThemeContext } from '../../context/themes/';
 
 const links = [
   {

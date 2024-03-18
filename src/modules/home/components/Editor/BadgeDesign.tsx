@@ -58,6 +58,7 @@ export const BadgeDesign = () => {
           onChange={(value) => handleSliderChange(value, 'badge')}
           getValue={(value) => `${value}px`}
           color='success'
+          isDisabled={!stylesConfig.badgeDisplayBadge}
         />
       </div>
     </div>

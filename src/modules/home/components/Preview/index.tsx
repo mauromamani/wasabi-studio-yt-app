@@ -4,7 +4,7 @@ import { Button, ScrollShadow } from '@nextui-org/react';
 import { LightModeIcon } from '../../../../shared/components/icons/LightModeIcon';
 import { useAppSelector } from '../../../../core/store/hooks';
 import { ROOT_STYLES, YT_CONTAINER_EDITOR } from '../../html/customStyles';
-import { ThemeContext } from '../../../../shared/context/themes/index.theme';
+import { ThemeContext } from '../../../../shared/context/themes/';
 import { DarkModeIcon } from '../../../../shared/components/icons/DarkModeIcon';
 
 export const Preview = () => {

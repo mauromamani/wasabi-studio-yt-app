@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { HomePage } from './modules/home/page';
 import { Layaout } from './shared/layout';
-import { ThemeContext } from './shared/context/themes/index.theme';
+import { ThemeContext } from './shared/context/themes/index';
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -10,7 +10,7 @@ const App = () => {
     <main
       className={`${
         theme === 'dark' ? 'dark dark-bg ' : 'light-bg '
-      }text-foreground min-h-screen`}
+      }text-foreground bg-background min-h-screen`}
     >
       <Layaout>
         <HomePage />

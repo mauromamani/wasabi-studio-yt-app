@@ -41,6 +41,7 @@ interface EditorState {
   };
   editorContent: any[];
   stylesToCopy: string;
+  stylesToExport: string;
 }
 
 const stylesConfigInitialState: StylesConfig = {
@@ -49,6 +50,8 @@ const stylesConfigInitialState: StylesConfig = {
    */
   layoutScale: 1,
   layoutAlign: 'start',
+  layoutMarginY: 5,
+  layoutMarginX: 20,
   /**
    * Badge
    */
@@ -93,6 +96,7 @@ const initialState: EditorState = {
     type: 'Full Chat',
   },
   stylesToCopy: '',
+  stylesToExport: '',
 };
 
 const randomChat = () => {
@@ -142,6 +146,10 @@ export const editorSlice = createSlice({
     },
     resetStyles: (state) => {
       state.stylesConfig = stylesConfigInitialState;
+    },
+    exportStyles: (state) => {
+      const styles = JSON.stringify(state.stylesConfig);
+      state.stylesToExport = styles;
     },
     setUniqueElements: (state, { payload }) => {
       if (state.uniqueElement.unique && state.uniqueElement.type === payload) {

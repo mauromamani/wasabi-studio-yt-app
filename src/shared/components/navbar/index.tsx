@@ -19,12 +19,11 @@ import { useAppDispatch, useAppSelector } from '../../../core/store/hooks';
 import { actions } from '../../../modules/home/redux/slice';
 import { StylesConfig } from '../../../modules/home/interfaces';
 import { useContext } from 'react';
-import { ThemeContext } from '../../context/themes/index.theme';
+import { ThemeContext } from '../../context/themes/';
 
 export const Navbar = () => {
-  const { stylesToCopy, stylesConfig, chatBoxName } = useAppSelector(
-    (state) => state.editor
-  );
+  const { stylesToCopy, stylesConfig, chatBoxName, stylesToExport } =
+    useAppSelector((state) => state.editor);
   const { theme } = useContext(ThemeContext);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -35,6 +34,10 @@ export const Navbar = () => {
     handleSaveLocal(stylesConfig);
   };
 
+  const handleCopyTestStylesToClipboard = () => {
+    navigator.clipboard.writeText(stylesToExport);
+  };
+
   const handleSaveLocal = (stylesConfig: StylesConfig) => {
     const stylesToSave = JSON.stringify(stylesConfig);
 
@@ -43,6 +46,7 @@ export const Navbar = () => {
 
   const handleOpenModal = () => {
     dispatch(actions.generateStylesToCopy());
+    dispatch(actions.exportStyles());
     onOpen();
   };
 
@@ -123,13 +127,13 @@ export const Navbar = () => {
                   language='css'
                   theme={dracula}
                   wrapLongLines
-                  // onCopy={() => handleCopyToClipboard()}
                 />
               </ModalBody>
               <ModalFooter>
                 <Button color='danger' variant='light' onPress={onClose}>
                   Close
                 </Button>
+
                 <Popover placement='top' color='success'>
                   <PopoverTrigger>
                     <Button
@@ -139,6 +143,29 @@ export const Navbar = () => {
                       startContent={<MdContentCopy />}
                     >
                       Copy and Save
+                    </Button>
+                  </PopoverTrigger>
+                  <PopoverContent className='bg-green-600 text-gray-200'>
+                    <div className='px-1 py-2'>
+                      <div className='text-small font-bold'>
+                        Code Copied to Clipboard
+                      </div>
+                      <div className='text-tiny'>
+                        The code has been copied to your clipboard
+                      </div>
+                    </div>
+                  </PopoverContent>
+                </Popover>
+
+                <Popover placement='top' color='success'>
+                  <PopoverTrigger>
+                    <Button
+                      className='bg-green-600 text-gray-200 font-semibold'
+                      color='primary'
+                      onClick={handleCopyTestStylesToClipboard}
+                      startContent={<MdContentCopy />}
+                    >
+                      Copy to Test
                     </Button>
                   </PopoverTrigger>
                   <PopoverContent className='bg-green-600 text-gray-200'>
