@@ -1,4 +1,4 @@
-type LayoutAlign = 'start' | 'center' | 'end';
+type LayoutAlign = 'start' | 'end';
 export interface StylesConfig {
   [key: string]: number | boolean | string;
   /**

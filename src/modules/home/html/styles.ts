@@ -222,20 +222,23 @@ export const STYLES = `
   /* IMPORTANTE: CHANNEL NAMES */
   yt-live-chat-text-message-renderer yt-live-chat-author-chip {
     overflow: visible !important;
-    width: fit-content !important;
     /* margin-right: 20px !important; */
     position: relative !important;
     top: -10px !important;
     left: -15px !important;
     z-index: 3 !important;
+    height: 40px !important;
+
+    display: flex !important;
+    align-items: center !important;
   }
 
   yt-live-chat-text-message-renderer #author-name {
     font-family: var(--font-family) !important;
     font-size: var(--name-font-size) !important;
     font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
     overflow: hidden !important;
+    letter-spacing: 0.5px !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     width: fit-content !important;
@@ -249,6 +252,9 @@ export const STYLES = `
 
   /* IMPORTANTE ICONOS RESPECTO AL CHANNEL NAME */
   yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
+    display: flex;
+    justify-content: start;
+    align-items: center !important;
     font-family: var(--font-family) !important;
     color: var(--all-badge-color);
     content: '•';
@@ -256,23 +262,25 @@ export const STYLES = `
     font-weight: 900;
     width: 30px;
     height: 23px;
-    top: 7px;
     right: -35px;
     position: absolute;
     z-index: 99;
   }
 
   yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+    display: flex;
+    justify-content: start;
+    align-items: center !important;
     font-family: var(--font-family) !important;
     color: var(--all-badge-color);
     content: '';
+    width: 30px;
+    height: 100%;
     font-size: 10px;
     font-weight: 900;
-    width: 30px;
-    height: 23px;
-    top: 8px;
     right: -45px;
     position: absolute;
+    top: 0px !important;
     z-index: 99;
   }
 
@@ -355,7 +363,6 @@ export const STYLES = `
     overflow: visible !important;
     text-overflow: ellipsis !important;
     z-index: 1 !important;
-    transform-origin: bottom left !important;
     border-left: 3px solid var(--all-border-name-color);
     background: var(--all-background-message-color);
   }
