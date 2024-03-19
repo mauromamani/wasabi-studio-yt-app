@@ -4,7 +4,7 @@ const Tier3H = [
   <div id="header" class="style-scope yt-live-chat-paid-message-renderer"> <yt-img-shadow id="author-photo"
       class="style-scope yt-live-chat-paid-message-renderer no-transition" style="background-color: transparent;"
       loaded=""> <img id="img" draggable="false" class="style-scope yt-img-shadow" alt=""
-        src="https://yt4.ggpht.com/1KqRN-uj2pOiaJqesu3o_rc2ogQmVc4RnjIf-1zTxO2OmYLPJrYbmP5K1pW6ngX9WTEXI20Q=s32-c-k-c0x00ffffff-no-rj"
+        src=""
         width="32" height="32"></yt-img-shadow> <dom-if restamp=""
       class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if> <dom-if
       class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if> <dom-if
@@ -16,8 +16,7 @@ const Tier3H = [
               disable-highlighting="" single-line="" class="style-scope yt-live-chat-paid-message-renderer"> <span
                 id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span><span id="author-name"
                 dir="auto"
-                class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">Ikan
-                Berkepala Lele<span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span></span><span
+                class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">Superchat Member Name<span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span></span><span
                 id="chat-badges" class="style-scope yt-live-chat-author-chip"><yt-live-chat-author-badge-renderer
                   class="style-scope yt-live-chat-author-chip" aria-label="Pelanggan (1 tahun)" type="member"
                   shared-tooltip-text="Pelanggan (1 tahun)">
@@ -35,7 +34,7 @@ const Tier3H = [
               class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden=""> <img id="img"
                 draggable="false" class="style-scope yt-img-shadow" alt="" width="16" height="16"></yt-img-shadow>
             <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer"> <yt-formatted-string
-                class="style-scope yt-live-chat-paid-message-renderer"> $&nbsp;10</yt-formatted-string> </div>
+                class="style-scope yt-live-chat-paid-message-renderer"> $&nbsp;5</yt-formatted-string> </div>
           </div>
         </div>
       </div> <span id="timestamp" class="style-scope yt-live-chat-paid-message-renderer">12:NaN AM</span>

@@ -5,7 +5,7 @@ const stickers2 = [
       id="author-photo" class="no-transition style-scope yt-live-chat-paid-sticker-renderer"
       style="background-color: transparent;" loaded=""><!--css-build:shady--><img id="img" draggable="false"
         class="style-scope yt-img-shadow" alt=""
-        src="https://yt3.ggpht.com/1KqRN-uj2pOiaJqesu3o_rc2ogQmVc4RnjIf-1zTxO2OmYLPJrYbmP5K1pW6ngX9WTEXI20Q=s88-c-k-c0x00ffffff-no-rj-mo"
+        src=""
         width="40" height="40"></yt-img-shadow><dom-if restamp=""
       class="style-scope yt-live-chat-paid-sticker-renderer"><template is="dom-if"></template></dom-if><dom-if
       class="style-scope yt-live-chat-paid-sticker-renderer"><template is="dom-if"></template></dom-if><dom-if
@@ -17,7 +17,7 @@ const stickers2 = [
             disable-highlighting="" single-line=""
             class="style-scope yt-live-chat-paid-sticker-renderer"><!--css-build:shady--><span
               id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span><span id="author-name"
-              dir="auto" class="member single-line style-scope yt-live-chat-author-chip">Orang Kaya<span
+              dir="auto" class="member single-line style-scope yt-live-chat-author-chip">Name<span
                 id="chip-badges" class="style-scope yt-live-chat-author-chip"></span></span><span id="chat-badges"
               class="style-scope yt-live-chat-author-chip"><yt-live-chat-author-badge-renderer
                 class="style-scope yt-live-chat-author-chip" aria-label="Pelanggan (1 tahun)" type="member"
@@ -38,8 +38,8 @@ const stickers2 = [
       id="sticker" notify-on-loaded="" tabindex="0"
       class="style-scope yt-live-chat-paid-sticker-renderer no-transition" style="background-color: transparent;"
       loaded=""><!--css-build:shady--><img id="img" draggable="false" class="style-scope yt-img-shadow"
-        alt="Anjing Shiba dengan mata berbinar berkata 'Pahlawanku'"
-        src="//lh3.googleusercontent.com/q-DC5b2tcmJlqho14ToM3X0Mfr5fY8dtVQg12lLAYkX_Ms87g0jJ6_kSv5b_WqhDNT5jCr7PSb1GPg9AEcs=s148-rwa"
+        alt=""
+        src="https://lh3.googleusercontent.com/-21C0x6zYcDxpJVYKl8CCKroyjW2Hdvh2FWBipCTFhonaPy2cSJZWTGvmjsoBJu-LedOHQrw1Qu7TYXxIlxv=s148-rwa"
         width="40" height="40"></yt-img-shadow></div><yt-formatted-string id="dashboard-deleted-state"
     class="style-scope yt-live-chat-paid-sticker-renderer" is-empty=""><!--css-build:shady--><yt-attributed-string
       class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string>

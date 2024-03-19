@@ -78,7 +78,7 @@ export const SupportCardDesign = () => {
           label='Title Font Size'
           step={1}
           maxValue={32}
-          minValue={5}
+          minValue={10}
           defaultValue={10}
           className='w-full'
           value={stylesConfig.supportCardTitleFontSize}

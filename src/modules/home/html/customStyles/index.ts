@@ -19,89 +19,88 @@ export const YT_CONTAINER_TESTING_ISOLATED = (
       background: transparent !important;
     }
 
-        yt-live-chat-text-message-renderer yt-live-chat-author-chip {
-          top: 0px !important;
-        }
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip {
+      top: 0px !important;
+    }
 
-        yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-          top: 10px !important;
-        }
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
+      top: 10px !important;
+    }
 
-        yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-          top: 2px !important;
-        }
+    yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
+      top: 2px !important;
+    }
 
-        yt-live-chat-text-message-renderer #message {
-          display: flex !important;
-          align-items: center !important;
-        }
+    yt-live-chat-text-message-renderer #message {
+      display: flex !important;
+      align-items: center !important;
+    }
 
-        yt-live-chat-text-message-renderer #message > img:first-child {
-          margin-left: 5px !important;
-        }
-
-
-        yt-live-chat-membership-item-renderer #message,
-        yt-live-chat-paid-message-renderer #message {
-          display: flex !important;
-          justify-content: center !important;
-          align-items: end !important;
-        }
-
-        yt-live-chat-membership-item-renderer #message > img:first-child,
-        yt-live-chat-paid-message-renderer #message > img:first-child {
-          margin-left: 5px !important;
-          margin-bottom: 2px !important;
-          vertical-align: middle !important;
-        }
-
-        body {
-          overflow: hidden;
-        }
+    yt-live-chat-text-message-renderer #message > img:first-child {
+      margin-left: 5px !important;
+    }
 
 
-        yt-live-chat-paid-message-renderer #card {
-          background: var(--yt-live-chat-paid-message-primary-color) !important; 
-        }
+    yt-live-chat-membership-item-renderer #message,
+    yt-live-chat-paid-message-renderer #message {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: end !important;
+    }
 
-        yt-live-chat-paid-message-renderer #header {
-          z-index: 0 !important;
-        }
+    yt-live-chat-membership-item-renderer #message > img:first-child,
+    yt-live-chat-paid-message-renderer #message > img:first-child {
+      margin-left: 5px !important;
+      margin-bottom: 2px !important;
+      vertical-align: middle !important;
+    }
 
-        yt-live-chat-paid-message-renderer #header #timestamp {
-          display: none !important;
-        }
+    body {
+      overflow: hidden;
+    }
 
-        yt-live-chat-paid-message-renderer #header::before {
-          z-index: 1 !important;
-        }
+    yt-live-chat-paid-message-renderer #card {
+      background: var(--yt-live-chat-paid-message-primary-color) !important; 
+    }
 
-        yt-live-chat-paid-message-renderer #header::after {
-          z-index: 1 !important;
-        }
+    yt-live-chat-paid-message-renderer #header {
+      z-index: 0 !important;
+    }
 
-        yt-live-chat-paid-message-renderer #content {
-          position: relative !important;
-          z-index: 10 !important;
-        }
+    yt-live-chat-paid-message-renderer #header #timestamp {
+      display: none !important;
+    }
 
-        yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
-          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
-        }
+    yt-live-chat-paid-message-renderer #header::before {
+      z-index: 1 !important;
+    }
 
-        yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
-          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
-          margin-top: 3px !important;
-          margin-left: 5px !important;
-        }
+    yt-live-chat-paid-message-renderer #header::after {
+      z-index: 1 !important;
+    }
 
-        yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer {
-          background: var(--yt-live-chat-paid-sticker-background-color) !important;
-        }
+    yt-live-chat-paid-message-renderer #content {
+      position: relative !important;
+      z-index: 10 !important;
+    }
 
-        yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer #timestamp {
-          display: none !important;
-        }
+    yt-live-chat-author-chip[disable-highlighting] #author-name.yt-live-chat-author-chip {
+      color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+    }
+
+    yt-live-chat-paid-message-renderer[is-v2-style] #purchase-amount-column.yt-live-chat-paid-message-renderer {
+      color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+      margin-top: 3px !important;
+      margin-left: 5px !important;
+    }
+
+    yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer {
+      background: var(--yt-live-chat-paid-sticker-background-color) !important;
+    }
+
+    yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #card.yt-live-chat-paid-sticker-renderer #timestamp {
+      display: none !important;
+    }
 
 
     .container {
@@ -262,6 +261,11 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
           display: none !important;
         }
 
+        yt-live-chat-paid-sticker-renderer:not([dashboard-money-feed]) #purchase-amount-chip.yt-live-chat-paid-sticker-renderer,
+        yt-live-chat-paid-sticker-renderer #purchase-amount-chip {
+          color: var(--yt-live-chat-disable-highlight-message-author-name-color, rgba(255, 255, 255, 0.7));
+        }
+
         ${customStyles}
 
         yt-live-chat-text-message-renderer,
@@ -358,7 +362,7 @@ export const ROOT_STYLES = (config: StylesConfig) => {
 
       /* sc-font-size */
       --sc-name-font-size: ${config.supportCardTitleFontSize}px;
-      --sc-amount-font-size: ${config.supportCardTitleFontSize - 3}px;
+      --sc-amount-font-size: ${config.supportCardTitleFontSize - 5}px;
       --sc-message-font-size: ${config.supportCardMessageFontSize}px;
       /* end-sc-font-size */
 

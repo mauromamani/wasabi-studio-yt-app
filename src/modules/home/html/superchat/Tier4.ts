@@ -35,7 +35,7 @@ const Tier4C = [
               class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden=""> <img id="img"
                 draggable="false" class="style-scope yt-img-shadow" alt="" width="16" height="16" /></yt-img-shadow>
             <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer"> <yt-formatted-string
-                class="style-scope yt-live-chat-paid-message-renderer">$&nbsp;99</yt-formatted-string> </div>
+                class="style-scope yt-live-chat-paid-message-renderer">$&nbsp;10</yt-formatted-string> </div>
           </div>
         </div>
       </div> <span id="timestamp" class="style-scope yt-live-chat-paid-message-renderer">8:03 PM</span>

@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from 'react';
 import { StylesConfig } from '../../../modules/home/interfaces';
 import { useAppDispatch } from '../../../core/store/hooks';
 import { actions } from '../../../modules/home/redux/slice';
+import { NAME_CHATBOX_STYLES_LS, NAME_CHATBOX_THEME } from '../../constants';
 
 type ThemeContextType = 'light' | 'dark';
 
@@ -25,11 +26,17 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   // load styles from local storage
   useEffect(() => {
-    const theme = localStorage.getItem('chatbox-name-styles');
-    const themeParsed = theme ? (JSON.parse(theme) as StylesConfig) : null;
+    const theme = localStorage.getItem(NAME_CHATBOX_THEME);
 
     if (theme) {
-      dispatch(actions.setStylesFromLocalStorage(themeParsed));
+      setTheme(theme as ThemeContextType);
+    }
+
+    const styles = localStorage.getItem(NAME_CHATBOX_STYLES_LS);
+    const stylesParsed = styles ? (JSON.parse(styles) as StylesConfig) : null;
+
+    if (styles) {
+      dispatch(actions.setStylesFromLocalStorage(stylesParsed));
     }
   }, [dispatch]);
 

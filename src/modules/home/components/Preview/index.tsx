@@ -6,6 +6,7 @@ import { useAppSelector } from '../../../../core/store/hooks';
 import { ROOT_STYLES, YT_CONTAINER_EDITOR } from '../../html/customStyles';
 import { ThemeContext } from '../../../../shared/context/themes/';
 import { DarkModeIcon } from '../../../../shared/components/icons/DarkModeIcon';
+import { NAME_CHATBOX_THEME } from '../../../../shared/constants';
 
 export const Preview = () => {
   const { stylesConfig, editorContent, uniqueElement } = useAppSelector(
@@ -15,6 +16,10 @@ export const Preview = () => {
 
   const handleChangeMode = () => {
     toggleTheme(theme === 'light' ? 'dark' : 'light');
+    localStorage.setItem(
+      NAME_CHATBOX_THEME,
+      theme === 'light' ? 'dark' : 'light'
+    );
   };
 
   const customStyles = () => {
@@ -51,9 +56,7 @@ export const Preview = () => {
         </div>
 
         <div
-          className={`${
-            theme === 'dark' ? 'bg-chat-preview' : 'bg-chat-preview-light'
-          } p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none`}
+          className={`bg-chat-preview p-2 py-10 rounded-2xl mt-5 flex flex-col items-center justify-center pointer-events-none`}
           style={{ userSelect: 'none' }}
           dangerouslySetInnerHTML={{
             __html: YT_CONTAINER_EDITOR(customStyles(), editorContent),

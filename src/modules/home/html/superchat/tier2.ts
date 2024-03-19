@@ -4,7 +4,7 @@ const Tier2C = [
       <div id="header" class="style-scope yt-live-chat-paid-message-renderer"> <yt-img-shadow id="author-photo"
           class="style-scope yt-live-chat-paid-message-renderer no-transition" style="background-color: transparent"
           loaded=""><img id="img" draggable="false" class="style-scope yt-img-shadow" alt=""
-            src="https://yt4.ggpht.com/1KqRN-uj2pOiaJqesu3o_rc2ogQmVc4RnjIf-1zTxO2OmYLPJrYbmP5K1pW6ngX9WTEXI20Q=s32-c-k-c0x00ffffff-no-rj"
+            src=""
             width="32" height="32" /></yt-img-shadow> <dom-if restamp=""
           class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if> <dom-if
           class="style-scope yt-live-chat-paid-message-renderer"><template is="dom-if"></template></dom-if> <dom-if
@@ -16,8 +16,7 @@ const Tier2C = [
                   disable-highlighting="" single-line="" class="style-scope yt-live-chat-paid-message-renderer"> <span
                     id="prepend-chat-badges" class="style-scope yt-live-chat-author-chip"></span><span id="author-name"
                     dir="auto"
-                    class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">Dek
-                    REZA<span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span></span><span
+                    class="member single-line style-scope yt-live-chat-author-chip style-scope yt-live-chat-author-chip">Superchat Member Name<span id="chip-badges" class="style-scope yt-live-chat-author-chip"></span></span><span
                     id="chat-badges" class="style-scope yt-live-chat-author-chip"><yt-live-chat-author-badge-renderer
                       class="style-scope yt-live-chat-author-chip" aria-label="Pelanggan (1 tahun)" type="member"
                       shared-tooltip-text="Pelanggan (1 tahun)">
@@ -35,7 +34,7 @@ const Tier2C = [
                   class="style-scope yt-live-chat-paid-message-renderer no-transition" hidden=""> <img id="img"
                     draggable="false" class="style-scope yt-img-shadow" alt="" width="16" height="16" /></yt-img-shadow>
                 <div id="purchase-amount" class="style-scope yt-live-chat-paid-message-renderer"> <yt-formatted-string
-                    class="style-scope yt-live-chat-paid-message-renderer">Rp&nbsp;20.000,00</yt-formatted-string> </div>
+                    class="style-scope yt-live-chat-paid-message-renderer">$ 2</yt-formatted-string> </div>
               </div>
             </div>
           </div> <span id="timestamp" class="style-scope yt-live-chat-paid-message-renderer">8:03 PM</span>
@@ -63,8 +62,7 @@ const Tier2C = [
         </div>
       </div>
       <div id="content" class="style-scope yt-live-chat-paid-message-renderer">
-        <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer"> Ikan ikan apa yg ga bisa
-          berenang? Ikan goreng
+        <div id="message" dir="auto" class="style-scope yt-live-chat-paid-message-renderer">Lorem ipsum dolor sit, amet consectetur adipisicing elit  
           <img
       class="emoji yt-formatted-string style-scope yt-live-chat-text-message-renderer"
       src="https://yt3.ggpht.com/KOxdr_z3A5h1Gb7kqnxqOCnbZrBmxI2B_tRQ453BhTWUhYAlpg5ZP8IKEBkcvRoY8grY91Q=w24-h24-c-k-nd"
