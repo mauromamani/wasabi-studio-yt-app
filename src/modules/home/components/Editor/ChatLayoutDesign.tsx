@@ -65,7 +65,7 @@ export const ChatLayoutDesign = () => {
         </Select>
 
         {/* SCALE */}
-        <Slider
+        {/* <Slider
           size='sm'
           label='Scale'
           step={0.01}
@@ -77,7 +77,7 @@ export const ChatLayoutDesign = () => {
           onChange={(value) => handleSliderChange(value, 'scale')}
           getValue={(value) => `${value}%`}
           color='success'
-        />
+        /> */}
 
         {/* MARGIN Y */}
         <Slider

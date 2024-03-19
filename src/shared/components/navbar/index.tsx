@@ -14,7 +14,6 @@ import { ReloadIcon } from '../icons/ReloadIcon';
 import { SaveIcon } from '../icons/SaveIcon';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import { MdContentCopy } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../core/store/hooks';
 import { actions } from '../../../modules/home/redux/slice';
 import { StylesConfig } from '../../../modules/home/interfaces';
@@ -26,7 +25,6 @@ export const Navbar = () => {
     useAppSelector((state) => state.editor);
   const { theme } = useContext(ThemeContext);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const handleCopyToClipboard = () => {
@@ -54,10 +52,6 @@ export const Navbar = () => {
     dispatch(actions.resetStyles());
   };
 
-  const handleGoTesting = () => {
-    navigate('/testing');
-  };
-
   const buttonStyles = () => {
     if (theme === 'dark') {
       return 'text-gray-300 border-dark';
@@ -80,14 +74,6 @@ export const Navbar = () => {
         </div>
 
         <div className='flex space-x-3'>
-          <Button
-            variant='bordered'
-            className={`font-semibold ${buttonStyles()}`}
-            onClick={handleGoTesting}
-          >
-            Testing
-          </Button>
-
           <Button
             variant='bordered'
             className={`font-semibold ${buttonStyles()}`}
