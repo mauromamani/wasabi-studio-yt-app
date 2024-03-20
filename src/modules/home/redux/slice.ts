@@ -87,7 +87,7 @@ const editorContentInitialState = [
 ];
 
 const initialState: EditorState = {
-  chatBoxName: 'Oriental Chatbox: Ruby',
+  chatBoxName: 'Oriental Chatbox: Sapphire',
   stylesConfig: stylesConfigInitialState,
   testingContent: [],
   editorContent: editorContentInitialState,

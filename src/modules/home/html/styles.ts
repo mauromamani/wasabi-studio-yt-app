@@ -53,24 +53,24 @@ yt-live-chat-ticker-renderer {
   --font-family: 'Ibarra Real Nova', serif;
   --all-background-message-color: linear-gradient(
     98deg,
-    #1a1014 12%,
-    #29151d 61%
+    #1f273e 12%,
+    #303753 61%
   );
-  --all-background-color: #27151c;
+  --all-background-color: #272e4b;
   --all-message-color: #ffffff;
-  --all-border-name-color: #dbb092;
-  --all-name-color: #dbb092;
-  --all-badge-color: #ea5272;
-  --all-gradient-color-1: #27151c7c;
-  --all-gradient-color-2: #27151c18;
-  --membership-name-color: #dbb092;
-  --membership-subtext-color: #ea5272;
-  --membership-other-text-color: #ea5272;
+  --all-border-name-color: #e5e2db;
+  --all-name-color: #e5e2db;
+  --all-badge-color: #93deff;
+  --all-gradient-color-1: #272e4b7c;
+  --all-gradient-color-2: #272e4b18;
+  --membership-name-color: #e5e2db;
+  --membership-subtext-color: #93deff;
+  --membership-other-text-color: #93deff;
   --membership-message-color: #ffffff;
-  --membership-background-color: #27151c;
-  --membership-border-color: #dbb092;
-  --membership-background-message-color: #27151c;
-  --membership-border-message-color: #dbb092;
+  --membership-background-color: #272e4b;
+  --membership-border-color: #e5e2db;
+  --membership-background-message-color: #272e4b;
+  --membership-border-message-color: #e5e2db;
   --name-font-size: 20px;
   --message-font-size: 20px;
   --sc-name-font-size: 20px;
@@ -451,8 +451,8 @@ ytd-sponsorships-live-chat-header-renderer #content::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: linear-gradient(180deg, #27151cc4 30%, #27151c18 81%),
-    linear-gradient(180deg, #70561408 9%, #e7b81c08 81%);
+  background: linear-gradient(180deg, #272e4bc4 30%, #272e4b18 81%),
+    linear-gradient(180deg, #e5e2db1e 9%, #e5e2db15 81%);
   z-index: 2;
 }
 yt-live-chat-membership-item-renderer[show-only-header]
