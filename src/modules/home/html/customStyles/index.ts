@@ -538,50 +538,51 @@ export const ROOT_STYLES = (config: StylesConfig) => {
 
   return `
     :root {
-      --font-family: 'Ibarra Real Nova', serif;
+    --font-family: 'Ibarra Real Nova', serif;
 
-      --all-background-message-color: linear-gradient(
-        98deg,
-        rgba(18, 18, 18, 1) 12%,
-        rgba(33, 31, 30, 1) 61%
-      );
-      --all-background-color: #121212;
-      --all-message-color: #ffffff;
-      --all-border-name-color: #dbb092;
-      --all-name-color: #dbb092;
-      --all-badge-color: #ea5272;
+    /* all */
+    --all-background-message-color: linear-gradient(
+    98deg,
+    #1a1014 12%,
+    #29151d 61%
+    );
+    --all-background-color: #27151c;
+    --all-message-color: #ffffff;
+    --all-border-name-color: #dbb092;
+    --all-name-color: #dbb092;
+    --all-badge-color: #ea5272;
 
-      --membership-name-color: #dbb092;
-      --membership-subtext-color: #ea5272;
-      --membership-other-text-color: #ea5272;
-      --membership-message-color: #ffffff;
-      --membership-background-color: #121212;
-      --membership-border-color: #dbb092;
-      --membership-background-message-color: #121212;
-      --membership-border-message-color: #dbb092;
+    --all-gradient-color-1: #27151c7c;
+    --all-gradient-color-2: #27151c18;
 
-      --sc-name-color: #ffffff;
-      --sc-amount-color: #ffffff;
-      --sc-message-color: #e36868;
-      --sc-background-color: #e36868;
-      --sc-border-color: #ffffff;
-      --sc-background-message-color: #fffffc;
-      --sc-border-message-color: #e36868;
-      --sc-decoration-color: #ffffff;
+    /* membership */
+    --membership-name-color: #dbb092;
+    --membership-subtext-color: #ea5272;
+    --membership-other-text-color: #ea5272;
+    --membership-message-color: #ffffff;
+    --membership-background-color: #27151c;
+    --membership-border-color: #dbb092;
+    --membership-background-message-color: #27151c;
+    --membership-border-message-color: #dbb092;
+    /* end-membership */
 
-      --name-font-size: ${config.chatAuthorFontSize}px;
-      --message-font-size: ${config.chatMessageFontSize}px;
+    /* chat-font-size */
+    --name-font-size: 20px;
+    --message-font-size: 20px;
+    /* end-chat-font-size */
 
-      --sc-name-font-size: ${config.supportCardTitleFontSize}px;
-      --sc-amount-font-size: ${config.supportCardTitleFontSize - 5}px;
-      --sc-message-font-size: ${config.supportCardMessageFontSize}px;
+    /* sc-font-size */
+    --sc-name-font-size: 20px;
+    --sc-amount-font-size: 14px;
+    --sc-message-font-size: 14px;
+    /* end-sc-font-size */
 
-      --membership-name-font-size: ${config.supportCardTitleFontSize}px;
-      --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
-      --membership-other-text-font-size: ${
-        config.supportCardOtherTextFontSize
-      }px;
-      --membership-message-font-size: ${config.supportCardMessageFontSize}px;
+    /* membership-font-size */
+    --membership-name-font-size: 20px;
+    --membership-subtext-font-size: 15px;
+    --membership-other-text-font-size: 15px;
+    --membership-message-font-size: 14px;
+    /* end-membership-font-size */
     }
 
     yt-live-chat-text-message-renderer,
