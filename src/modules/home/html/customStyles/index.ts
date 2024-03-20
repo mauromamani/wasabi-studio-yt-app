@@ -566,23 +566,17 @@ export const ROOT_STYLES = (config: StylesConfig) => {
     --membership-border-message-color: #dbb092;
     /* end-membership */
 
-    /* chat-font-size */
-    --name-font-size: 20px;
-    --message-font-size: 20px;
-    /* end-chat-font-size */
+    --name-font-size: ${config.chatAuthorFontSize}px;
+    --message-font-size: ${config.chatMessageFontSize}px;
 
-    /* sc-font-size */
-    --sc-name-font-size: 20px;
-    --sc-amount-font-size: 14px;
-    --sc-message-font-size: 14px;
-    /* end-sc-font-size */
+    --sc-name-font-size: ${config.supportCardTitleFontSize}px;
+    --sc-amount-font-size: ${config.supportCardTitleFontSize - 5}px;
+    --sc-message-font-size: ${config.supportCardMessageFontSize}px;
 
-    /* membership-font-size */
-    --membership-name-font-size: 20px;
-    --membership-subtext-font-size: 15px;
-    --membership-other-text-font-size: 15px;
-    --membership-message-font-size: 14px;
-    /* end-membership-font-size */
+    --membership-name-font-size: ${config.supportCardTitleFontSize}px;
+    --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
+    --membership-other-text-font-size: ${config.supportCardOtherTextFontSize}px;
+    --membership-message-font-size: ${config.supportCardMessageFontSize}px;
     }
 
     yt-live-chat-text-message-renderer,

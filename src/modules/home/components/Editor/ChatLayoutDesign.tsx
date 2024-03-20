@@ -49,6 +49,7 @@ export const ChatLayoutDesign = () => {
           placeholder='Select Display Mode'
           className='w-full'
           variant='bordered'
+          disallowEmptySelection
           radius='sm'
           selectedKeys={[stylesConfig.layoutAlign]}
           onChange={({ target: { value } }) =>
