@@ -543,26 +543,26 @@ export const ROOT_STYLES = (config: StylesConfig) => {
       /* all */
       --all-background-message-color: linear-gradient(
         98deg,
-        #1f273e 12%,
-        #303753 61%
+        #2d2940 12%,
+        #3a3652 61%
       );
-      --all-background-color: #272e4b;
+      --all-background-color: #343049;
       --all-message-color: #ffffff;
       --all-border-name-color: #e5e2db;
       --all-name-color: #e5e2db;
-      --all-badge-color: #93deff;
+      --all-badge-color: #acb8ff;
 
-      --all-gradient-color-1: #272e4b7c;
-      --all-gradient-color-2: #272e4b18;
+      --all-gradient-color-1: #3430497c;
+      --all-gradient-color-2: #34304918;
 
       /* membership */
       --membership-name-color: #e5e2db;
-      --membership-subtext-color: #93deff;
-      --membership-other-text-color: #93deff;
+      --membership-subtext-color: #acb8ff;
+      --membership-other-text-color: #acb8ff;
       --membership-message-color: #ffffff;
-      --membership-background-color: #272e4b;
+      --membership-background-color: #343049;
       --membership-border-color: #e5e2db;
-      --membership-background-message-color: #272e4b;
+      --membership-background-message-color: #343049;
       --membership-border-message-color: #e5e2db;
       /* end-membership */
 

@@ -87,7 +87,7 @@ const editorContentInitialState = [
 ];
 
 const initialState: EditorState = {
-  chatBoxName: 'Oriental Chatbox: Sapphire',
+  chatBoxName: 'Oriental Chatbox: Amethyst',
   stylesConfig: stylesConfigInitialState,
   testingContent: [],
   editorContent: editorContentInitialState,
