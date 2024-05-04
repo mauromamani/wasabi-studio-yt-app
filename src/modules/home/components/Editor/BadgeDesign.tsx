@@ -50,9 +50,9 @@ export const BadgeDesign = () => {
           size='sm'
           label='Badge Font Size'
           step={1}
-          maxValue={20}
+          maxValue={15}
           minValue={5}
-          defaultValue={10}
+          defaultValue={3}
           className='w-full'
           value={stylesConfig.badgeFontSize}
           onChange={(value) => handleSliderChange(value, 'badge')}

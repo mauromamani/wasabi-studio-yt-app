@@ -56,7 +56,7 @@ const stylesConfigInitialState: StylesConfig = {
    * Badge
    */
   badgeDisplayBadge: true,
-  badgeFontSize: 10,
+  badgeFontSize: 7,
 
   /**
    * Chat Design
@@ -87,7 +87,7 @@ const editorContentInitialState = [
 ];
 
 const initialState: EditorState = {
-  chatBoxName: `@UmariTomoe's Custom Chatbox`,
+  chatBoxName: `@TheCrystalSim's Custom Chatbox`,
   stylesConfig: stylesConfigInitialState,
   testingContent: [],
   editorContent: editorContentInitialState,
@@ -134,6 +134,8 @@ export const editorSlice = createSlice({
       const styles = STYLES;
 
       const stylesToCopy = `
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
         ${styles}
 
         ${rootStyles}
