@@ -27,7 +27,7 @@ const stickers2 = [
                     class="style-scope yt-live-chat-author-badge-renderer" alt="Pelanggan (1 tahun)"></div>
               </yt-live-chat-author-badge-renderer></span></yt-live-chat-author-chip></div><span id="price-column"
           class="style-scope yt-live-chat-paid-sticker-renderer"><yt-formatted-string id="purchase-amount-chip"
-            class="style-scope yt-live-chat-paid-sticker-renderer">Rp30,000</yt-formatted-string><yt-formatted-string
+            class="style-scope yt-live-chat-paid-sticker-renderer">$ 100</yt-formatted-string><yt-formatted-string
             id="deleted-state" class="style-scope yt-live-chat-paid-sticker-renderer"
             is-empty=""><!--css-build:shady--><yt-attributed-string
               class="style-scope yt-formatted-string"></yt-attributed-string></yt-formatted-string></span>

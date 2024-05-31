@@ -50,6 +50,7 @@ export const ChatLayoutDesign = () => {
           className='w-full'
           variant='bordered'
           radius='sm'
+          disallowEmptySelection
           selectedKeys={[stylesConfig.layoutAlign]}
           onChange={({ target: { value } }) =>
             handleChange('layoutAlign', value)
