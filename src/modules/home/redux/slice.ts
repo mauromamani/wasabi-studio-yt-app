@@ -51,7 +51,7 @@ const stylesConfigInitialState: StylesConfig = {
   layoutScale: 1,
   layoutAlign: 'start',
   layoutMarginY: 5,
-  layoutMarginX: 20,
+  layoutMarginX: 30,
   /**
    * Badge
    */
@@ -71,7 +71,7 @@ const stylesConfigInitialState: StylesConfig = {
    */
   supportCardAllCaps: false,
   supportCardDisplayCard: true,
-  supportCardTitleFontSize: 20,
+  supportCardTitleFontSize: 22,
   supportCardSubTitleFontSize: 15,
   supportCardOtherTextFontSize: 15,
   supportCardMessageFontSize: 14,
