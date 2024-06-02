@@ -178,6 +178,9 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
 
         ${customStyles}
         /* TODO LO DE ABAJO ES CSS PARA VISUALIZAR EN EL EDITOR, NO TIENE QUE AFECTAR AL PRODUCTO FINAL */
+        yt-live-chat-app > * {
+          overflow: visible !important;
+        }
 
         yt-live-chat-text-message-renderer yt-live-chat-author-chip {
           height: 43px !important;
@@ -247,9 +250,10 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
           animation: none !important;
         }
 
+
       </style>
 
-        <div style="width: 70%">
+        <div style="width: 70%;">
           <yt-live-chat-app>
             <div id="contents" class="style-scope yt-live-chat-app">
                 <yt-live-chat-renderer class="style-scope yt-live-chat-app" hide-timestamps="" darker-dark-theme="" has-ticker="" has-input-action-panel="" style="--scrollbar-width: 17px;">
@@ -282,233 +286,8 @@ export const YT_CONTAINER_EDITOR = (customStyles: string, content: any[]) => `
         </div>
 `;
 
-// export const ROOT_STYLES = (config: StylesConfig) => {
-//   const scaleX = config.layoutAlign === 'start' ? '1' : '-1';
-
-//   return `
-//     :root {
-//       --font-family: 'Ibarra Real Nova', serif;
-
-//       /* all */
-//       --all-background-message-color: linear-gradient(
-//         98deg,
-//         rgba(18, 18, 18, 1) 12%,
-//         rgba(33, 31, 30, 1) 61%
-//       );
-//       --all-background-color: #121212;
-//       --all-message-color: #ffffff;
-//       --all-border-name-color: #dbb092;
-//       --all-name-color: #dbb092;
-//       --all-badge-color: #ea5272;
-
-//       /* membership */
-//       --membership-name-color: #dbb092;
-//       --membership-subtext-color: #ea5272;
-//       --membership-other-text-color: #ea5272;
-//       --membership-message-color: #ffffff;
-//       --membership-background-color: #121212;
-//       --membership-border-color: #dbb092;
-//       --membership-background-message-color: #121212;
-//       --membership-border-message-color: #dbb092;
-//       /* end-membership */
-
-//       /* sc */
-//       --sc-name-color: #ffffff;
-//       --sc-amount-color: #ffffff;
-//       --sc-message-color: #e36868;
-//       --sc-background-color: #e36868;
-//       --sc-border-color: #ffffff;
-//       --sc-background-message-color: #fffffc;
-//       --sc-border-message-color: #e36868;
-//       --sc-decoration-color: #ffffff;
-//       /* end-sc */
-
-//       /* chat-font-size */
-//       --name-font-size: ${config.chatAuthorFontSize}px;
-//       --message-font-size: ${config.chatMessageFontSize}px;
-//       /* end-chat-font-size */
-
-//       /* profile-toggle */
-//       --show-profile-picture: block;
-//       /* end-profile-toggle */
-
-//       /* sc-font-size */
-//       --sc-name-font-size: ${config.supportCardTitleFontSize}px;
-//       --sc-amount-font-size: ${config.supportCardTitleFontSize - 5}px;
-//       --sc-message-font-size: ${config.supportCardMessageFontSize}px;
-//       /* end-sc-font-size */
-
-//       /* membership-font-size */
-//       --membership-name-font-size: ${config.supportCardTitleFontSize}px;
-//       --membership-subtext-font-size: ${config.supportCardSubTitleFontSize}px;
-//       --membership-other-text-font-size: ${
-//         config.supportCardOtherTextFontSize
-//       }px;
-//       --membership-message-font-size: ${config.supportCardMessageFontSize}px;
-//       /* end-membership-font-size */
-//     }
-
-//     /*
-//     yt-live-chat-text-message-renderer  {
-//       margin: 10px ${scaleMessageMarginX(config.layoutScale)} !important;
-//     }
-
-//     */
-
-//     /************************** START CHAT LAYOUT **************************/
-//     yt-live-chat-text-message-renderer,
-//     yt-live-chat-membership-item-renderer,
-//     yt-live-chat-paid-message-renderer,
-//     yt-live-chat-paid-sticker-renderer,
-//     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer {
-//       animation: ${
-//         config.layoutAlign === 'start' ? 'slide-in-left' : 'slide-in-right'
-//       } 0.5s ease both !important;
-
-//       margin-top: ${config.layoutMarginY + 20}px !important;
-//       margin-bottom: ${config.layoutMarginY}px !important;
-//       margin-left: ${config.layoutMarginX}px !important;
-//       margin-right: ${config.layoutMarginX}px !important;
-//     }
-
-//     yt-live-chat-text-message-renderer {
-//       margin-top: ${config.layoutMarginY - 3}px !important;
-//       margin-bottom: ${config.layoutMarginY - 3}px !important;
-//     }
-
-//     yt-live-chat-text-message-renderer {
-//       align-self: ${config.layoutAlign} !important;
-//     }
-
-//     yt-live-chat-text-message-renderer #author-name {
-//       transform: scaleX(${scaleX}) !important;
-//     }
-
-//     yt-live-chat-text-message-renderer #content {
-//       transform: scaleX(${scaleX}) !important;
-//     }
-
-//     yt-live-chat-text-message-renderer #message {
-//       ${
-//         config.layoutAlign === 'start' ? 'border-left' : 'border-right'
-//       }: 3px solid var(--all-border-name-color) !important;
-
-//       ${config.layoutAlign === 'end' ? 'border-left: none !important;' : ''}
-//       transform: scaleX(${scaleX}) !important;
-//     }
-
-//     ${
-//       config.layoutAlign === 'end'
-//         ? `
-//           yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-//             display: flex;
-//             justify-content: end !important;
-//             align-items: center !important;
-//             font-family: var(--font-family) !important;
-//             color: var(--all-badge-color);
-//             content: '';
-//             overflow: hidden !important;
-//             min-width: 120px;
-//             max-width: 120px;
-//             height: 100%;
-//             width: 100%;
-//             font-size: 10px;
-//             font-weight: 900;
-//             position: absolute;
-//             right: -135px !important;
-//             top: 0px !important;
-//             z-index: 99;
-//             transform: scaleX(${scaleX}) !important;
-//           }
-
-//           yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-//             display: flex;
-//             justify-content: end;
-//             align-items: center !important;
-//             font-family: var(--font-family) !important;
-//             color: var(--all-badge-color);
-//             content: '•';
-//             font-size: 13px;
-//             font-weight: 900;
-//             height: 23px;
-//             right: -35px;
-//             position: absolute;
-//             z-index: 99;
-//             transform: scaleX(${scaleX}) !important;
-//           }
-//         `
-//         : ''
-//     }
-
-//     /************************** END CHAT LAYOUT **************************/
-
-//     /************************** START BADGE DESIGN **************************/
-//     yt-live-chat-text-message-renderer yt-live-chat-author-chip::after {
-//       display: ${config.badgeDisplayBadge ? 'flex' : 'none'} !important;
-//       font-size: ${config.badgeFontSize + 3}px !important;
-//     }
-
-//     yt-live-chat-text-message-renderer yt-live-chat-author-chip::before {
-//       display: ${config.badgeDisplayBadge ? 'flex' : 'none'} !important;
-//       font-size: ${config.badgeFontSize}px !important;
-//     }
-//     /************************** END BADGE DESIGN **************************/
-
-//     /************************** START CHAT DESIGN **************************/
-//     yt-live-chat-text-message-renderer * {
-//       text-transform: ${config.chatAllCaps ? 'uppercase' : 'none'}  !important;
-//     }
-
-//     yt-live-chat-text-message-renderer #message > img {
-//       width: ${config.chatEmoteSize}px !important;
-//       height: ${config.chatEmoteSize}px !important;
-//     }
-
-//     /************************** END CHAT DESIGN **************************/
-
-//     /************************** START SUPPORT CARD DESIGN **************************/
-//     yt-live-chat-membership-item-renderer *,
-//     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer *,
-//     yt-live-chat-paid-message-renderer *,
-//     yt-live-chat-paid-sticker-renderer * {
-//       text-transform: ${
-//         config.supportCardAllCaps ? 'uppercase' : 'none'
-//       }  !important;
-//     }
-
-//     yt-live-chat-membership-item-renderer,
-//     ytd-sponsorships-live-chat-gift-purchase-announcement-renderer,
-//     yt-live-chat-paid-message-renderer,
-//     yt-live-chat-paid-sticker-renderer {
-//       ${config.supportCardDisplayCard ? '' : 'display: none !important;'}
-//     }
-
-//     yt-live-chat-membership-item-renderer #message > img,
-//     yt-live-chat-paid-message-renderer #message > img {
-//       width: ${config.supportCardEmoteSize}px !important;
-//       height: ${config.supportCardEmoteSize}px !important;
-//     }
-//     /************************** END SUPPORT CARD DESIGN **************************/
-
-//     @keyframes slide-in-right {
-//       0% {
-//         transform: translateX(100px);
-//         opacity: 0;
-//       }
-
-//       100% {
-//         transform: translateX(0);
-//         opacity: 1;
-//       }
-//     }
-
-//   `;
-// };
-
 export const ROOT_STYLES = (config: StylesConfig) => {
   const scaleX = config.layoutAlign === 'start' ? '1' : '-1';
-
-  console.log(config);
 
   return `
     :root {
@@ -563,8 +342,16 @@ export const ROOT_STYLES = (config: StylesConfig) => {
       --membership-message-font-size: ${config.supportCardMessageFontSize}px;
       /* end-membership-font-size */
 
-      --streamer-badge: url('data:image/svg+xml,<svg width="${config.badgeFontSize + 7}" height="${config.badgeFontSize + 7}" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39056 1.95154L10.6828 5.23176L14.7749 6.46022L12.2241 9.73711L12.7774 14.4796L8.50913 12.6616L4.12234 14.3215L4.47802 9.73711L1.90918 6.33834L6.01933 5.3108L8.39056 1.95154Z" stroke="url(%23paint0_radial_86_3)" stroke-width="2"/><defs><radialGradient id="paint0_radial_86_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(18.7914 17.3211) rotate(-141.896) scale(25.7557 2.91146)"><stop offset="0.775" stop-color="%23AAAAAA"/><stop offset="0.95" stop-color="%23D9D9D9"/></radialGradient></defs></svg>');
-      --mod-badge: url('data:image/svg+xml,<svg width="${config.badgeFontSize + 5}" height="${config.badgeFontSize + 6}" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.25091 1.66577L5.03477 8.4049L3.23185 8.3713L3.67703 10.0094L1.5332 12.5126L3.24827 14.1813L5.53499 11.7745L7.19961 12.1474L7.03567 10.3304L13.5386 5.83761V1.66577H9.25091Z" stroke="url(%23paint0_radial_86_4)" stroke-width="2"/><defs><radialGradient id="paint0_radial_86_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17.2865 17.0199) rotate(-139.984) scale(24.6932 2.83084)"><stop offset="0.775" stop-color="%23AAAAAA"/><stop offset="0.95" stop-color="%23D9D9D9"/></radialGradient></defs></svg>');
+      --streamer-badge: url('data:image/svg+xml,<svg width="${
+        config.badgeFontSize + 7
+      }" height="${
+    config.badgeFontSize + 7
+  }" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.39056 1.95154L10.6828 5.23176L14.7749 6.46022L12.2241 9.73711L12.7774 14.4796L8.50913 12.6616L4.12234 14.3215L4.47802 9.73711L1.90918 6.33834L6.01933 5.3108L8.39056 1.95154Z" stroke="url(%23paint0_radial_86_3)" stroke-width="2"/><defs><radialGradient id="paint0_radial_86_3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(18.7914 17.3211) rotate(-141.896) scale(25.7557 2.91146)"><stop offset="0.775" stop-color="%23AAAAAA"/><stop offset="0.95" stop-color="%23D9D9D9"/></radialGradient></defs></svg>');
+      --mod-badge: url('data:image/svg+xml,<svg width="${
+        config.badgeFontSize + 5
+      }" height="${
+    config.badgeFontSize + 6
+  }" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.25091 1.66577L5.03477 8.4049L3.23185 8.3713L3.67703 10.0094L1.5332 12.5126L3.24827 14.1813L5.53499 11.7745L7.19961 12.1474L7.03567 10.3304L13.5386 5.83761V1.66577H9.25091Z" stroke="url(%23paint0_radial_86_4)" stroke-width="2"/><defs><radialGradient id="paint0_radial_86_4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(17.2865 17.0199) rotate(-139.984) scale(24.6932 2.83084)"><stop offset="0.775" stop-color="%23AAAAAA"/><stop offset="0.95" stop-color="%23D9D9D9"/></radialGradient></defs></svg>');
     }
 
     yt-live-chat-text-message-renderer {
@@ -595,13 +382,21 @@ export const ROOT_STYLES = (config: StylesConfig) => {
     }
 
     yt-live-chat-text-message-renderer[author-type='owner'] #author-name::before {
-      ${config.layoutAlign === 'end' ? 'right: -42px !important;' : 'left: -28px !important;'}
+      ${
+        config.layoutAlign === 'end'
+          ? 'right: -42px !important;'
+          : 'left: -28px !important;'
+      }
       top: ${config.badgeFontSize > 13 ? '15%' : '28%'};
     }
     
     yt-live-chat-text-message-renderer[author-type='moderator']
       #author-name::before {
-      ${config.layoutAlign === 'end' ? 'right: -42px !important;' : 'left: -28px !important;'}
+      ${
+        config.layoutAlign === 'end'
+          ? 'right: -42px !important;'
+          : 'left: -28px !important;'
+      }
       top: ${config.badgeFontSize > 13 ? '15%' : '28%'};
     }
 
@@ -697,6 +492,30 @@ export const ROOT_STYLES = (config: StylesConfig) => {
     yt-live-chat-text-message-renderer[author-type=''] #content::before {
       transform: scaleX(${scaleX}) !important;
       left: ${config.layoutAlign === 'end' ? '-36px' : '-28px'};
+    }
+
+    /* Animaciones */
+    yt-live-chat-text-message-renderer #content::before {
+      animation: none;
+      animation: ${
+        config.layoutAlign === 'end'
+          ? 'rotate-assets-end 1s linear both'
+          : 'rotate-assets 1s linear both'
+      };
+    }
+
+    @keyframes rotate-assets-end {
+      0% {
+        transform: rotate(14deg) scaleX(${scaleX});
+      }
+    
+      50% {
+        transform: rotate(-14deg) scaleX(${scaleX});
+      }
+    
+      100% {
+        transform: rotate(0deg) scaleX(${scaleX});
+      }
     }
   `;
 };

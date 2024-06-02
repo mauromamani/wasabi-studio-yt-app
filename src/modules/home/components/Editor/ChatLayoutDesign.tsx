@@ -101,7 +101,7 @@ export const ChatLayoutDesign = () => {
           label='Margin X'
           step={1}
           maxValue={100}
-          minValue={15}
+          minValue={25}
           defaultValue={1}
           className='w-full'
           value={stylesConfig.layoutMarginX}

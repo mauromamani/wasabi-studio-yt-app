@@ -87,7 +87,7 @@ const editorContentInitialState = [
 ];
 
 const initialState: EditorState = {
-  chatBoxName: 'Oriental Chatbox: Amethyst',
+  chatBoxName: `@UmariTomoe's Custom Chatbox`,
   stylesConfig: stylesConfigInitialState,
   testingContent: [],
   editorContent: editorContentInitialState,
